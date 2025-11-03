@@ -1,2 +1,4 @@
 # Projeto-Individual
-Projeto Individual - SPtech
+Projeto Individual 
+
+README em andamento...
