@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <link rel="shortcut icon" href="/public/favicon/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="/public/src/css/style.css">
-    <link rel="stylesheet" href="/public/src/css/reset.css">
+    <link rel="shortcut icon" href="/Site/public/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Site/public/src/css/style.css">
+    <link rel="stylesheet" href="/Site/public/src/css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,9 +18,9 @@
         </div>
         <nav>
             <li><a href="#"> Início </a></li>
-            <li><a href="#heroContent"> Sobre Mim </a></li>
-            <li><a href="#"> Aprender </a></li>
-            <li><a href="#"> Minigames </a></li>
+            <li><a href="#aboutMe"> Sobre Mim </a></li>
+            <li><a href="#learn"> Aprender </a></li>
+            <li><a href="#minigames"> Minigames </a></li>
             <li class="register"><a href="#"> Cadastro </a></li>
             <li class="login"><a href="#"> Login </a></li>
         </nav>    
@@ -47,7 +47,7 @@
 
     <section id="aboutMe">
         <div id="myImage">
-            <img src="/public/src/images/rafaelCalderon.png" alt="Foto de Rafael Prazeres Calderon">
+            <img src="/Site/public/src/images/rafaelCalderon.png" alt="Foto de Rafael Prazeres Calderon">
         </div>
         <div class="aboutMeText">
             <h2>Sobre Mim</h2>
@@ -63,7 +63,7 @@
 
     <section id="englishMap">
         <div class="countriesSpeakEnglish">
-            <img src="/public/src/images/countries-english-speakers.png" alt="Infográfico de países que falam inglês">
+            <img src="/Site/public/src/images/countries-english-speakers.png" alt="Infográfico de países que falam inglês">
         </div>
         <div class="explainingCountries">
             <h2>Países que mais falam inglês</h2>
@@ -82,8 +82,7 @@
     <section id="learn">
         <div class="learningTitle">
                 <div class="leftSide">
-                    
-                <h2>Vamos aprender as diferenças do Inglês nesses três países?</h2>
+                <h2>A origem da língua inglesa em cada país</h2>
 
                 <div class="usa">
                     <h3>Inglês Estadunidense</h3>
@@ -96,6 +95,9 @@
                 <div class="aussie">
                     <h3>Inglês Australiano</h3>
                 </div>
+                <img class="usFlag" src="/Site/public/src/images/usaFlag.png" alt="">
+                <img class="ukFlag" src="/Site/public/src/images/ukFlag.png" alt="">
+                <img class="aussieFlag" src="/Site/public/src/images/australiaFlag.png" alt="">
             </div>
             <div class="rightSide">
                 <div class="countryFlag">
@@ -124,8 +126,70 @@
                 </div>
             </div>
     </section>
+
     <hr>
 
-    <script src="/public/script.js"></script>
+    <section id="minigames">
+        <h2>Minijogos</h2>
+        <p>Jogue e descubra se você tem domínio sobre a língua!</p>
+        <div class="cards">
+            <div class="firstGameCard card">
+                <div class="title">
+                    <h4>Listening</h4>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Iure, temporibus laudantium incidunt expedita fugit 
+                    </p>
+                </div>
+                <div class="btnPlay">
+                    <button onclick="play()">Jogar</button>
+                </div>
+            </div>
+            <div class="secondGameCard card">
+                <div class="title">
+                    <h4>Slangs</h4>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Iure, temporibus laudantium incidunt expedita fugit                 
+                    </p>
+                </div>
+                <div class="btnPlay">
+                    <button onclick="play()">Jogar</button>
+                </div>
+            </div>
+            <div class="thirdGameCard card">
+                <div class="title">
+                    <h4>Name the Object</h4>
+                </div>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                      Iure, temporibus laudantium incidunt expedita fugit            
+                    </p>
+                </div>
+                <div class="btnPlay">
+                    <button onclick="play()">Jogar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer>
+        <div class="logo">
+            <img src="https://placehold.co/200x60" alt="">
+        </div>
+        <nav>
+            <li><a href="#"> Início </a></li>
+            <li><a href="#heroContent"> Sobre Mim </a></li>
+            <li><a href="#"> Aprender </a></li>
+            <li><a href="#"> Minigames </a></li>
+        </nav>    
+    </header>
+    </footer>
+
+    <script src="/Site/public/script.js"></script>
 </body>
 </html>

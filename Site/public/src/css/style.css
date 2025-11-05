@@ -41,7 +41,7 @@ header nav .register:hover, header nav .login:hover {
     justify-content: flex-start;
     align-items: center;
     height: 90vh;
-    background-image: url(/public/src/images/download.jpg);
+    background-image: url(/Site/public/src/images/download.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -59,6 +59,7 @@ header nav .register:hover, header nav .login:hover {
 
 #heroContent .heroParagraph {
     line-height: 1.4vw;
+    font-size: 1vw;
 }
 
 #heroContent .btnLearnMore button {
@@ -104,10 +105,12 @@ header nav .register:hover, header nav .login:hover {
 
 #aboutMe .aboutMeText {
     text-align: justify;
+    font-size: 1vw;
 }
 
 #aboutMe .aboutMeText h2 {
     margin-bottom: 1vw;
+    font-size: 1.5vw;
 }
 
 #aboutMe .aboutMeText p {
@@ -146,6 +149,7 @@ header nav .register:hover, header nav .login:hover {
 
 #learn {
     padding: 5vw;
+    background-color: #e7ebee;
 }
 
 .learningTitle {
@@ -159,13 +163,36 @@ header nav .register:hover, header nav .login:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5vw;
+    padding: 2vw;
     height: 20vw;
+    box-shadow: 1px 1px 20px black;
+    background-color: #ffffff;
+    border-radius: 1em;
+    width: 100vw;
+    position: relative;
+}
+
+.leftSide h2 {
+    font-size: 1.4vw;
+    width: 20vw;
+    text-align: center;
 }
 
 .leftSide .usa, .leftSide .uk, .leftSide .aussie{
     color: #ffffff;
     text-align: center;
+    border-radius: 0.4vw;
+    padding: 0.5vw;
+    cursor: pointer;
+    box-shadow: 0.5px 0.5px 10px #000000;
+}
+
+.leftSide .usa:hover, .leftSide .uk:hover, .leftSide .aussie:hover{
+    transition: 0.4s ease-in-out;
+    transform: translateY(-0.26vw);
+    box-shadow: 1px 1px 10px #045a56;
+    color: #d8c6c6;
+    font-weight: 900;
 }
 
 .leftSide .usa{
@@ -186,14 +213,20 @@ header nav .register:hover, header nav .login:hover {
     align-items: center;
     justify-content: center;
     text-align: justify;
-    padding: 5vw;
     width: 60vw;
     line-height: 1.4vw;
+    margin-left: 6vw;
 
+}
+
+.learningTitle .rightSide h2 {
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
 }
 
 .learningTitle .rightSide p {
     text-align: justify;
+    font-size: 1vw;
 }
 
 .aboutUsEnglish, .aboutUKEnglish, .aboutAussieEnglish {
@@ -202,6 +235,103 @@ header nav .register:hover, header nav .login:hover {
     align-items: center;
     justify-content: center;
     text-align: justify;
+    gap: 2vw;
+}
+
+.usFlag, .ukFlag, .aussieFlag {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    align-self: start;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: none;
+    align-items: end;
+    position: absolute;
+    left: 47vw;
+}
+
+#minigames {
+    padding: 5vw;
+}
+
+#minigames  h2 {
+    margin-bottom: 2vw;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+#minigames p {
+    text-align: justify;
+    font-size: 1vw;
+    line-height: 1.4vw;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 1vw;
+    margin-top: 1vw;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5vw;
+    width: 20vw;
+    border: 1px solid #000000;
+    border-radius: 1em;
+    box-shadow: 1px 1px 10px black;
+    margin-top: 1vw;
+    gap: 1vw;
+}
+
+.card h4 {
+    font-size: 1.2vw;
+    text-align: center;
+    width: 15vw;
+}
+
+.card p {
+    font-size: 1vw;
+    line-height: 1.4vw;
+}
+
+.card button {
+    padding: 0.5vw;
+    border: 1px solid #000000;
+    border-radius: 0.4vw;
+    cursor: pointer;
+    box-shadow: 0.5px 0.5px 10px #000000;
+    transition: 0.4s ease-in-out;
+    box-shadow: 1px 1px 10px #045a56;
+    color: #d8c6c6;
+    font-weight: 900;
+    background-color: #4682b4;
+}
+
+.card button:hover {
+    transform: translateY(-0.26vw);
+}
+
+footer {
+    display: flex;
+}
+
+footer nav {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    padding: 2vw;
+    width: 100%;
+    background-color: #4682b4;
+    color: #ffffff;
+    font-size: 1vw;
 }
 
 
