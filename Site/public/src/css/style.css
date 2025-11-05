@@ -1,0 +1,217 @@
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #4682b4;
+    padding: 1vw;
+    color: #ffffff;
+}
+
+header nav {
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    font-size: 1vw;
+}
+
+header nav li:hover {
+    transition: 0.4s ease-in-out;
+    transform: translateY(-0.26vw);
+}
+
+header nav .register, .login {
+    background-color: #ffffff;
+    color: #4682b4;
+    padding: 0.5vw 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header nav .register:hover, header nav .login:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transition: 0.4s ease-in-out;
+}
+
+#hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90vh;
+    background-image: url(/public/src/images/download.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#heroContent {
+    text-align: justify;
+    color: #ffffff;
+    width: 30vw;
+    padding-left: 7vw;
+}
+
+#heroContent .heroTitle {
+    margin-bottom: 1vw;
+}
+
+#heroContent .heroParagraph {
+    line-height: 1.4vw;
+}
+
+#heroContent .btnLearnMore button {
+    margin-top: 2vw;
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    background: rgb(26, 111, 126);
+    padding: 0.6vw;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1vw;
+    border-radius: 0.7vw;
+    font-weight: 700;
+}
+
+#heroContent .btnLearnMore button:hover {
+    transition: 0.4s ease-in-out;
+    transform: translateY(-0.26vw);
+    box-shadow: 1px 1px 10px #045a56;
+    color: #ffd700;
+    font-weight: 900;
+}
+
+#aboutMe {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5vw;
+    flex-direction: row-reverse;
+    background-color: #e7ebee;;
+}
+
+#aboutMe #myImage img{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 2vw;
+    object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#aboutMe .aboutMeText {
+    text-align: justify;
+}
+
+#aboutMe .aboutMeText h2 {
+    margin-bottom: 1vw;
+}
+
+#aboutMe .aboutMeText p {
+    line-height: 1.4vw;
+    width: 40vw;
+}
+
+#englishMap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5vw;
+}
+
+#englishMap .countriesSpeakEnglish img{
+    width: 60vw;
+    height: 28vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    margin-right: 2vw;
+    object-fit: cover;
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 20px black;
+}
+
+#englishMap .explainingCountries {
+    text-align: justify;
+    width: 30vw;
+    font-size: 1vw;
+    line-height: 1.8vw;
+}
+
+#englishMap h2 {
+    margin-bottom: 2vw;
+}
+
+#learn {
+    padding: 5vw;
+}
+
+.learningTitle {
+    display: flex;
+    align-items: center;
+}
+
+.learningTitle .leftSide {
+    border: 1px solid #000000;
+    gap: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+    height: 20vw;
+}
+
+.leftSide .usa, .leftSide .uk, .leftSide .aussie{
+    color: #ffffff;
+    text-align: center;
+}
+
+.leftSide .usa{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+.leftSide .uk{
+    background-color: #0000ff;
+}
+
+.leftSide .aussie{
+    background-color: #008000;
+}
+
+.learningTitle .rightSide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    padding: 5vw;
+    width: 60vw;
+    line-height: 1.4vw;
+
+}
+
+.learningTitle .rightSide p {
+    text-align: justify;
+}
+
+.aboutUsEnglish, .aboutUKEnglish, .aboutAussieEnglish {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
