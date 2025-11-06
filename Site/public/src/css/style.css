@@ -5,7 +5,7 @@ html {
 header {
     display: flex;
     justify-content: space-around;
-    padding: 1vw;
+    padding: 0.7vw;
     color: #ffffff;
     position: fixed;
     width: 100%;;
@@ -105,7 +105,7 @@ header nav .register:hover, header nav .login:hover {
     overflow: hidden;
     margin-right: 2vw;
     object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 #aboutMe .aboutMeText {
