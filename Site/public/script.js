@@ -51,3 +51,11 @@ aussieBtn.addEventListener('mouseleave', () => {
     aus.style.display = 'none';
     aussieFlag.style.display = 'none';
 });
+
+function encaminharCadastro() {
+    window.location.href = 'cadastro.html';
+}
+
+function encaminharLogin() {
+    window.location.href = 'login.html';
+}

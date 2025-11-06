@@ -21,8 +21,8 @@
             <li><a href="#aboutMe"> Sobre Mim </a></li>
             <li><a href="#learn"> Aprender </a></li>
             <li><a href="#minigames"> Minigames </a></li>
-            <li class="register"><a href="#"> Cadastro </a></li>
-            <li class="login"><a href="#"> Login </a></li>
+            <li class="register"><a href="cadastro.html"> Cadastro </a></li>
+            <li class="login"><a href="login.html"> Login </a></li>
         </nav>    
     </header>
 
@@ -130,47 +130,56 @@
     <hr>
 
     <section id="minigames">
-        <h2>Minijogos</h2>
-        <p>Jogue e descubra se você tem domínio sobre a língua!</p>
-        <div class="cards">
-            <div class="firstGameCard card">
-                <div class="title">
-                    <h4>Listening</h4>
+        <div class="blur">
+            <h2>Minijogos</h2>
+            <p>Jogue e descubra se você tem domínio sobre a língua!</p>
+            <div class="cards">
+                <div class="firstGameCard card">
+                    <div class="title">
+                        <h4>Listening</h4>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Iure, temporibus laudantium incidunt expedita fugit 
+                        </p>
+                    </div>
+                    <div class="btnPlay">
+                        <button onclick="play()">Jogar</button>
+                    </div>
                 </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Iure, temporibus laudantium incidunt expedita fugit 
-                    </p>
+                <div class="secondGameCard card">
+                    <div class="title">
+                        <h4>Slangs</h4>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                            Iure, temporibus laudantium incidunt expedita fugit                 
+                        </p>
+                    </div>
+                    <div class="btnPlay">
+                        <button onclick="play()">Jogar</button>
+                    </div>
                 </div>
-                <div class="btnPlay">
-                    <button onclick="play()">Jogar</button>
+                <div class="thirdGameCard card">
+                    <div class="title">
+                        <h4>Name the Object</h4>
+                    </div>
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Iure, temporibus laudantium incidunt expedita fugit            
+                        </p>
+                    </div>
+                    <div class="btnPlay">
+                        <button onclick="play()">Jogar</button>
+                    </div>
                 </div>
             </div>
-            <div class="secondGameCard card">
-                <div class="title">
-                    <h4>Slangs</h4>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Iure, temporibus laudantium incidunt expedita fugit                 
-                    </p>
-                </div>
-                <div class="btnPlay">
-                    <button onclick="play()">Jogar</button>
-                </div>
-            </div>
-            <div class="thirdGameCard card">
-                <div class="title">
-                    <h4>Name the Object</h4>
-                </div>
-                <div class="description">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                      Iure, temporibus laudantium incidunt expedita fugit            
-                    </p>
-                </div>
-                <div class="btnPlay">
-                    <button onclick="play()">Jogar</button>
-                </div>
+        </div>
+        <div class="overlay-text">
+            <h2>Cadastre-se ou logue para jogar 🎮</h2>
+            <div class="buttons">
+                <button class="btnSignUp" onclick="encaminharCadastro()">Cadastro</button>
+                <button class="btnLogin" onclick="encaminharLogin()">Login</button>
             </div>
         </div>
     </section>
