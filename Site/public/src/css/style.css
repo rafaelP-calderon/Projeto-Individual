@@ -8,7 +8,7 @@ header {
     padding: 0.7vw;
     color: #ffffff;
     position: fixed;
-    width: 100%;;
+    width: 100%;
     background: rgba(70, 130, 180, 0.4);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -45,8 +45,8 @@ header nav .register:hover, header nav .login:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 90vh;
-    background-image: url(/Site/public/src/images/download.jpg);
+    height: 100vh;
+    background-image: url(/Site/public/src/images/teste.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -106,6 +106,7 @@ header nav .register:hover, header nav .login:hover {
     margin-right: 2vw;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    filter: blur(2vw);
 }
 
 #aboutMe .aboutMeText {
@@ -290,7 +291,7 @@ header nav .register:hover, header nav .login:hover {
     width: 20vw;
     border: 1px solid #000000;
     border-radius: 1em;
-    box-shadow: 1px 1px 10px black;
+    box-shadow: 1px 1px 10px #000000;
     margin-top: 1vw;
     gap: 1vw;
 }
@@ -347,7 +348,7 @@ footer nav {
   opacity: 0.7;
 }
 
-.overlay-text {
+.overlayText {
     position: absolute;
     bottom: 20vw;
     left: 37vw;

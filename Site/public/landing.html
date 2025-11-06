@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="shortcut icon" href="/Site/public/favicon/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="/Site/public/src/css/style.css">
     <link rel="stylesheet" href="/Site/public/src/css/reset.css">
+    <link rel="stylesheet" href="/Site/public/src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,8 +21,7 @@
             <li><a href="#aboutMe"> Sobre Mim </a></li>
             <li><a href="#learn"> Aprender </a></li>
             <li><a href="#minigames"> Minigames </a></li>
-            <li class="register"><a href="cadastro.html"> Cadastro </a></li>
-            <li class="login"><a href="login.html"> Login </a></li>
+            <li class="login"><a href="cadastro.html"> Login </a></li>
         </nav>    
     </header>
 
@@ -84,15 +83,15 @@
                 <div class="leftSide">
                 <h2>A origem da língua inglesa em cada país</h2>
 
-                <div class="usa">
+                <div class="usa" onmouseenter="exibirUS()" onmouseleave="leave()">
                     <h3>Inglês Estadunidense</h3>
                 </div>
 
-                <div class="uk">
+                <div class="uk" onmouseenter="exibirUK()" onmouseleave="leave()">
                     <h3>Inglês Britânico</h3>
                 </div>
 
-                <div class="aussie">
+                <div class="aussie" onmouseenter="exibirAussie()" onmouseleave="leave()">
                     <h3>Inglês Australiano</h3>
                 </div>
                 <img class="usFlag" src="/Site/public/src/images/usaFlag.png" alt="">
@@ -175,10 +174,9 @@
                 </div>
             </div>
         </div>
-        <div class="overlay-text">
+        <div class="overlayText">
             <h2>Cadastre-se ou logue para jogar 🎮</h2>
             <div class="buttons">
-                <button class="btnSignUp" onclick="encaminharCadastro()">Cadastro</button>
                 <button class="btnLogin" onclick="encaminharLogin()">Login</button>
             </div>
         </div>
