@@ -1,0 +1,168 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 60vw;
+    height: 50vh;
+    border-radius: 0.8vw;
+    border: 1px solid #000000;
+    backdrop-filter: blur(10px);
+}
+
+.container .signSide {
+    padding: 2vw;
+    border-radius: 0.8vw;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.container .signSide .inputsSignup {
+    width: 15vw;
+}
+
+.container .signSide .inputsSignup input {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.container .signSide .inputsSignup .inputUser,
+.container .signSide .inputsSignup .inputEmail,
+.container .signSide .inputsSignup .inputPasswd,
+.container .signSide .inputsSignup .inputConfirmPasswd {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 1vw;
+}
+
+.container .loginSide {
+    padding: 2vw;
+    border-radius: 0.8vw;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.container .loginSide .inputsLogin {
+    width: 15vw;
+}
+
+.container .loginSide .inputsLogin input {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.container .loginSide .inputsLogin .inputEmailLogin,
+.container .loginSide .inputsLogin .inputPasswdLogin {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 1vw;
+}
+
+.container .signSide .btnSignup button {
+    width: 13vw;
+    height: 2.2vw;
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Estudar código abaixo */
+
+.field {
+    position: relative;
+    margin: 1.2rem 0;
+    width: 100%;
+}
+
+.field input {
+    width: 100%;
+    padding: 1rem 2.5rem 0.5rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 0.8vw;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.field input:focus {
+    border-color: #4682b4;
+}
+
+.field label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 0.9vw;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    background: white;
+    padding: 0 0.25rem;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+}
+
+.field i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: #ffffff inset; /* muda o fundo */
+    -webkit-text-fill-color: #000; /* cor do texto */
+    transition: background-color 5000s ease-in-out 0s; /* previne flash de cor */
+}

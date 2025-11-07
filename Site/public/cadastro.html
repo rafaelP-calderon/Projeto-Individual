@@ -5,57 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Site/public/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Site/public/src/css/signup.css">
+    <link rel="stylesheet" href="/Site/public/src/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="leftSide">
-            <div class="welcomeBack">
-                <h1>Bem-vindo de volta!</h1>
-            </div>
-            <div class="waysToLogin">
-                <div class="google">
-                    <i class="fa-brands fa-google"></i> 
-                    <p>Fazer login com o Google</p>
+    <main>
+        <div class="container">
+            <div class="signSide">
+                <h3>Cadastro</h3>
+                <div class="inputsSignup">  
+                    <div class="inputUser field">
+                        <input type="text" placeholder=" " id="username"> <label for="username">Usuário</label> <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="inputEmail field">
+                        <input type="email" placeholder=" " id="emailUser"> <label for="email">Email</label> <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="inputPasswd field">
+                        <input type="password" placeholder=" " id="passwdUser"> <label for="passwd">Senha</label> <i class="fa-solid fa-lock"></i>
+                    </div>
+                        <div class="inputConfirmPasswd field">
+                        <input type="password" placeholder=" " id="confirmPasswdUser"> <label for="confirmPasswd">Confirmar senha</label> <i class="fa-solid fa-eye"></i>
+                    </div>
                 </div>
-                <div class="facebook">
-                    <i class="fa-brands fa-facebook"></i>
-                    <p>Fazer login com o Facebook</p>
+                <div class="btnSignup">
+                    <button>Cadastrar</button>
                 </div>
-                <div class="x">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <p>Fazer login com o X</p>
-                </div>
-            </div>
-            <h2> Ou </h2>
-            <div class="login">
-                <div class="email">
-                    <input type="email" placeholder="E-mail ou nome de usuário">
-                </div>
-                <div id="passwd">
-                    <input type="password">
+                <div class="haveAccount">
+                    <p>Já possui uma conta?</p>
                 </div>
             </div>
-            <div class="forgotPasswd">
-                <p>Esqueceu sua senha?</p>
-                <p>Clique <span>aqui</span></p>
+
+            <div class="loginSide">
+                <div class="inputsLogin">
+                    <h3>Login</h3>
+                    <div class="inputEmailLogin field"></div>
+                        <input type="email" id="emailLogin" placeholder=" "> <label for="emailLogin">Email</label> <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="inputPasswdLogin">
+                        <input type="password" id="confirmPasswdLogin" placeholder=" "> <label for="confirmPasswdLogin">Senha</label> <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <div class="btnLogin">
+                    <button>Entrar</button>
+                </div>
+                <div class="options">
+                    <p>Criar uma conta</p>
+                    <p>Esqueceu a senha?</p>
+                </div>
+                </div>
             </div>
         </div>
-        
-        <div class="rightSide">
-            <div class="signUpHere">
-                <h3>CADASTRE-SE AQUI</h3>
-            </div>
-            <div class="inputs">
-                <input type="text" placeholder="Código de Ativação">
-                <input type="text" placeholder="Nome Completo">
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
-                <input type="password" placeholder="Confirmar senha">
-            </div>
-            <div class="btnSignUp">
-                <button>Cadastrar</button>
-            </div>
-        </div>
-    </div>
+    </main>
 </body>
 </html>
