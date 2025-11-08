@@ -10,7 +10,7 @@ main {
     align-items: center;
     justify-content: space-around;
     width: 60vw;
-    height: 50vh;
+    height: 55vh;
     border-radius: 0.8vw;
     border: 1px solid #000000;
     backdrop-filter: blur(10px);
@@ -55,6 +55,16 @@ main {
     margin-bottom: 1vw;
 }
 
+.container .signSide .btnSignup button {
+    width: 13vw;
+    height: 2.2vw;
+    background: transparent;
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
 .container .loginSide {
     padding: 2vw;
     border-radius: 0.8vw;
@@ -64,7 +74,8 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 1vw;
+    text-align: center;
+    margin-bottom: 4.2vw;
 }
 
 .container .loginSide .inputsLogin {
@@ -77,30 +88,42 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1vw;
 }
 
 .container .loginSide .inputsLogin .inputEmailLogin,
 .container .loginSide .inputsLogin .inputPasswdLogin {
     display: flex;
-    gap: 1vw;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 100%;
     border: none;
     border-bottom: 1px solid #000000;
     margin-bottom: 1vw;
 }
 
-.container .signSide .btnSignup button {
+.container .loginSide .inputsLogin .btnLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .loginSide .inputsLogin .btnLogin button {
+    border: 1px solid #000000;
+    border-radius: 1vw;
+    padding: 0.5vw;
     width: 13vw;
     height: 2.2vw;
     background: transparent;
-    border: 1px solid #000000;
-    border-radius: 1vw;
     font-size: 1vw;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .loginSide .options {
+    display: flex;
+    gap: 3vw;
 }
 
 
@@ -111,7 +134,17 @@ main {
 
 
 
-/* Estudar código abaixo */
+
+
+
+
+
+
+
+
+
+
+
 
 .field {
     position: relative;

@@ -17,7 +17,7 @@ header {
 
 header nav {
     display: flex;
-    gap: 1.5vw;
+    gap: 3vw;
     align-items: center;
     font-size: 1vw;
 }
@@ -46,7 +46,7 @@ header nav .register:hover, header nav .login:hover {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    background-image: url(/Site/public/src/images/teste.jpg);
+    background-image: url(/Site/public/src/images/Gemini_Generated_Image_gbsxi1gbsxi1gbsx.png);
     background-size: cover;
     background-position: center;
 }
@@ -95,7 +95,7 @@ header nav .register:hover, header nav .login:hover {
     justify-content: space-evenly;
     padding: 5vw;
     flex-direction: row-reverse;
-    background-color: #e7ebee;;
+    background-color: #d7e9f7;;
 }
 
 #aboutMe #myImage img{
@@ -129,6 +129,7 @@ header nav .register:hover, header nav .login:hover {
     align-items: center;
     justify-content: space-evenly;
     padding: 5vw;
+    background-color: #e7ebee;
 }
 
 #englishMap .countriesSpeakEnglish img{
@@ -139,7 +140,8 @@ header nav .register:hover, header nav .login:hover {
     margin-right: 2vw;
     object-fit: cover;
     border: 1px solid #000000;
-    box-shadow: 1px 1px 20px black;
+    box-shadow: 1px 1px 20px #000000;
+    background-color: #d7f3ea;
 }
 
 #englishMap .explainingCountries {
@@ -171,7 +173,7 @@ header nav .register:hover, header nav .login:hover {
     justify-content: center;
     padding: 2vw;
     height: 20vw;
-    box-shadow: 1px 1px 20px black;
+    box-shadow: 1px 1px 20px #000000;
     background-color: #ffffff;
     border-radius: 1em;
     width: 100vw;
@@ -222,7 +224,6 @@ header nav .register:hover, header nav .login:hover {
     width: 60vw;
     line-height: 1.4vw;
     margin-left: 6vw;
-
 }
 
 .learningTitle .rightSide h2 {
@@ -242,6 +243,7 @@ header nav .register:hover, header nav .login:hover {
     justify-content: center;
     text-align: justify;
     gap: 2vw;
+    height: 20vw;
 }
 
 .usFlag, .ukFlag, .aussieFlag {
@@ -257,71 +259,28 @@ header nav .register:hover, header nav .login:hover {
     left: 47vw;
 }
 
-#minigames {
-    padding: 5vw;
-    position: relative;
-}
-
-#minigames  h2 {
-    margin-bottom: 2vw;
-    font-size: 1.5vw;
-    text-align: center;
-}
-
-#minigames p {
-    text-align: justify;
-    font-size: 1vw;
-    line-height: 1.4vw;
-    text-align: center;
-}
-
-.cards {
-    display: flex;
-    gap: 1vw;
-    margin-top: 1vw;
-    justify-content: space-evenly;
-}
-
-.card {
+#mission {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5vw;
-    width: 20vw;
-    border: 1px solid #000000;
-    border-radius: 1em;
-    box-shadow: 1px 1px 10px #000000;
-    margin-top: 1vw;
-    gap: 1vw;
+    justify-content: space-evenly;
+    padding: 10vw;
+    background-color: #ffffff;
+    flex-direction: row-reverse;
 }
 
-.card h4 {
-    font-size: 1.2vw;
-    text-align: center;
-    width: 15vw;
+#mission .sgd {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 50%;
 }
 
-.card p {
-    font-size: 1vw;
-    line-height: 1.4vw;
+#mission .sgd img {
+    width: 100%;
 }
 
-.card button {
-    padding: 0.5vw;
-    border: 1px solid #000000;
-    border-radius: 0.4vw;
-    cursor: pointer;
-    box-shadow: 0.5px 0.5px 10px #000000;
-    transition: 0.4s ease-in-out;
-    box-shadow: 1px 1px 10px #045a56;
-    color: #d8c6c6;
-    font-weight: 900;
-    background-color: #4682b4;
-}
-
-.card button:hover {
-    transform: translateY(-0.26vw);
+#mission .sgdExplain {
+    width: 35%;
 }
 
 footer {
@@ -339,25 +298,6 @@ footer nav {
     background-color: #4682b4;
     color: #ffffff;
     font-size: 1vw;
-}
-
-.blur {
-  filter: blur(5px);
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.7;
-}
-
-.overlayText {
-    position: absolute;
-    bottom: 20vw;
-    left: 37vw;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 0.5vw;
 }
 
 .buttons {
