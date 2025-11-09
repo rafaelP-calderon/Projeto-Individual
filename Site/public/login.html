@@ -1,69 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="/Site/public/favicon/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="/Site/public/src/css/signup.css">
     <link rel="stylesheet" href="/Site/public/src/css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <main>
         <div class="container">
+            <div class="imgOver">
+                <img class="imgOverflow" src="/Site/public/src/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
+            </div>
             <div class="signSide">
                 <h3>Cadastro</h3>
-                <div class="inputsSignup">  
+                <div class="inputsSignup">
                     <div class="inputUser field">
-                        <input type="text" placeholder=" " id="username"> <label for="username">Usuário</label> <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder=" " id="username"> <label for="username">Usuário</label> <i
+                            class="fa-regular fa-user"></i>
                     </div>
                     <div class="inputEmail field">
-                        <input type="email" placeholder=" " id="emailUser"> <label for="email">Email</label> <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder=" " id="emailUser"> <label for="email">Email</label> <i
+                            class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="inputPasswd field">
-                        <input type="password" placeholder=" " id="passwdUser"> <label for="passwd">Senha</label> <i class="fa-solid fa-lock"></i>
-                    </div>
-                        <div class="inputConfirmPasswd field">
-                        <input type="password" placeholder=" " id="confirmPasswdUser"> <label for="confirmPasswd">Confirmar senha</label> <i class="fa-solid fa-eye"></i>
+                        <input type="password" placeholder=" " id="passwdUser"> <label for="passwd">Senha</label> <i
+                            class="fa-solid fa-lock"></i>
                     </div>
                 </div>
                 <div class="btnSignup">
                     <button>Cadastrar</button>
                 </div>
                 <div class="haveAccount">
-                    <p>Já possui uma conta?</p>
+                    <button onclick="signUp()"> Já possui uma conta? </button>
                 </div>
             </div>
 
             <div class="loginSide">
+                <h3>Login</h3>
                 <div class="inputsLogin">
-                    <h3>Login</h3>
-                    <div class="inputsLogin">
-                        <div class="inputEmailLogin field">
-                            <input type="email" id="emailLogin" placeholder=" "> <label for="emailLogin">Email</label> <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div class="inputPasswdLogin field">
-                            <input type="password" id="confirmPasswdLogin" placeholder=" "> <label for="confirmPasswdLogin">Senha</label> <i class="fa-solid fa-lock"></i>
-                        </div>
+                    <div class="inputEmailLogin field">
+                        <input type="email" id="emailLogin" placeholder=" "> <label for="emailLogin">Email</label> <i
+                            class="fa-solid fa-envelope"></i>
                     </div>
-                    <div class="btnLogin">
-                        <button>Entrar</button>
-                    </div>
-                    <div class="options">
-                        <div class="createAccount">
-                            <p>Criar uma conta</p>
-                        </div>
-                        <div class="forgotPasswd">
-                            <p>Esqueceu a senha?</p>
-                        </div>
+                    <div class="inputPasswdLogin field">
+                        <input type="password" id="confirmPasswdLogin" placeholder=" "> <label
+                            for="confirmPasswdLogin">Senha</label> <i class="fa-solid fa-lock"></i>
                     </div>
                 </div>
+
+                <div class="btnLogin">
+                    <button>Entrar</button>
+                </div>
+
+                <div class="options">
+                    <div class="createAccount">
+                        <button onclick="logIn()"> Criar uma conta </button>
+                    </div>
+                    <div class="forgotPasswd">
+                       <button onclick="logIn()"> Esqueceu a senha? </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
+
+    <script src="/Site/public/src/script/script.js"></script>
 </body>
 </html>
