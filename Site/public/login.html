@@ -21,6 +21,9 @@
 <body>
     <main>
         <div class="container">
+            <div class="goBackSignUp">
+                <a href="landing.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="landing.html"> Voltar </a> </button>
+            </div>
             <div class="imgOver">
                 <img class="imgOverflow" src="/Site/public/src/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
             </div>
@@ -28,28 +31,37 @@
                 <h3>Cadastro</h3>
                 <div class="inputsSignup">
                     <div class="inputUser field">
-                        <input type="text" placeholder=" " id="username"> <label for="username">Usuário</label> <i
+                        <input type="text" id="username" placeholder=" "> <label id="labelUser" for="username">Usuário</label> <i
                             class="fa-regular fa-user"></i>
                     </div>
+                    <p class="erroUser">O usuário deve conter pelo menos 3 caracteres.</p>
                     <div class="inputEmail field">
-                        <input type="email" placeholder=" " id="emailUser"> <label for="email">Email</label> <i
+                        <input type="email" id="emailUser" placeholder=" "> <label for="emailUser">Email</label> <i
                             class="fa-solid fa-envelope"></i>
                     </div>
+                    <p class="erroEmail">O email deve conter um "@" e um "." no domínio.</p>
                     <div class="inputPasswd field">
-                        <input type="password" placeholder=" " id="passwdUser"> <label for="passwd">Senha</label> <i
+                        <input type="password" id="passwdUser" placeholder=" "> <label for="passwdUser">Senha</label> <i
                             class="fa-solid fa-lock"></i>
                     </div>
+                    <p class="erroPasswd">A senha deve conter pelo menos 8 caracteres.</p>
                 </div>
                 <div class="btnSignup">
-                    <button>Cadastrar</button>
+                    <button onclick="signUp()">Cadastrar</button>
                 </div>
                 <div class="haveAccount">
-                    <button onclick="signUp()"> Já possui uma conta? </button>
+                    <button onclick="alreadyHave()"> Já possui uma conta? </button>
+                </div>
+
+                <div class="accountCreated">
+                    <p>Conta criada com sucesso!</p>
                 </div>
             </div>
 
             <div class="loginSide">
+
                 <h3>Login</h3>
+
                 <div class="inputsLogin">
                     <div class="inputEmailLogin field">
                         <input type="email" id="emailLogin" placeholder=" "> <label for="emailLogin">Email</label> <i
@@ -62,7 +74,7 @@
                 </div>
 
                 <div class="btnLogin">
-                    <button>Entrar</button>
+                    <button onclick="logInInputs()">Entrar</button>
                 </div>
 
                 <div class="options">
@@ -74,6 +86,13 @@
                     </div>
                 </div>
 
+                <div class="accountLogIn">
+                    <p>Logado com sucesso!</p>
+                </div>
+
+            </div>
+            <div class="goBackLogin">
+                <a href="landing.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="landing.html"> Voltar </a> </button>
             </div>
         </div>
     </main>
