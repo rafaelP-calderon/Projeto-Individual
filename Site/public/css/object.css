@@ -1,0 +1,77 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(/Site/public/assets/images/nyc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    width: 20vw;
+    gap: 1vw;
+    position: relative;
+    background-color: rgba(245, 245, 245, 0.4);
+    backdrop-filter: blur(1vw);
+}
+
+.card input {
+    width: 15vw;
+    height: 2vw;
+    text-align: center;
+    border: none;
+    border-bottom: 0.1vw solid #000000;
+    background: none;
+}
+
+.card input:focus {
+    outline: none;
+}
+
+.card button {
+    background: none;
+    border: 1px solid #000000;
+    padding: 0.5vw;
+    width: 10vw;
+    cursor: pointer;
+    font-size: 0.8vw;
+    font-weight: 700;
+    background-color: #ffffff;
+}
+
+.card button:hover {
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-0.15vw);
+}
+
+.displayLater {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.goBack {
+    position: absolute;
+    bottom: 0.5vw;
+    left: 1vw;
+    gap: 1vw;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.goBack a {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}

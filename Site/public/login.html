@@ -7,10 +7,11 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="/Site/public/favicon/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="/Site/public/src/css/signup.css">
-    <link rel="stylesheet" href="/Site/public/src/css/reset.css">
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="shortcut icon" href="/Site/public/assets/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Site/public/css/signup.css">
+    <link rel="stylesheet" href="/Site/public/css/header.css">
+    <link rel="stylesheet" href="/Site/public/css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,10 +23,10 @@
     <main>
         <div class="container">
             <div class="goBackSignUp">
-                <a href="landing.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="landing.html"> Voltar </a> </button>
+                <a href="index.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="index.html"> Voltar </a> </button>
             </div>
             <div class="imgOver">
-                <img class="imgOverflow" src="/Site/public/src/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
+                <img class="imgOverflow" src="/Site/public/assets/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
             </div>
             <div class="signSide">
                 <h3>Cadastro</h3>
@@ -88,15 +89,88 @@
 
                 <div class="accountLogIn">
                     <p>Logado com sucesso!</p>
+                    <img src="/Site/public/assets/aguarde-pink3.gif" alt="">
                 </div>
 
             </div>
             <div class="goBackLogin">
-                <a href="landing.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="landing.html"> Voltar </a> </button>
+                <a href="index.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="index.html"> Voltar </a> </button>
             </div>
         </div>
     </main>
 
-    <script src="/Site/public/src/script/script.js"></script>
+    <script src="/Site/public/js/script.js"></script>
 </body>
 </html>
+
+<script>
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

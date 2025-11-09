@@ -1,0 +1,96 @@
+body {
+    overflow: hidden;
+}
+
+#minigames {
+    padding: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 115vh;
+    background: url(/Site/public/assets/images/pexels-pixabay-258117.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+#minigames .firstGameCard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+#minigames .secondGameCard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+#minigames .thirdGameCard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+#minigames h2 {
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    text-align: center;
+}
+
+#minigames .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 4vw;
+    gap: 1vw;
+    border-radius: 0.7vw;
+}
+
+#minigames .card {
+    display: flex;
+    align-items: center;
+    border: 3px solid #ffffff;
+    padding: 2vw;
+    flex-direction: column;
+    height: 20vw;
+    gap: 2vw;
+    border-radius: 0.3vw;
+    backdrop-filter: blur(0.1vw);
+}
+
+#minigames .cards h4 {
+    font-size: 1.5vw;
+}
+
+#minigames p {
+    font-size: 1vw;
+    line-height: 1.4vw;
+    text-align: center;
+}
+
+#minigames button {
+    background: none;
+    border: 1px solid #ffffff;
+    width: 10vw;
+    padding: 0.6vw;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+#minigames button:hover {
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: translateY(-0.26vw);
+    box-shadow: 0 0 1vw #ffffff;
+    border: none;
+}

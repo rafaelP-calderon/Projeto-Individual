@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="shortcut icon" href="/Site/public/assets/favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Site/public/css/style.css">
+    <link rel="stylesheet" href="/Site/public/css/header.css">
+    <link rel="stylesheet" href="/Site/public/css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://placehold.co/200x80" alt="Logo do website">
+        </div>
+        <nav>
+            <li><a href="#"> Início </a></li>
+            <li><a href="#aboutMe"> Sobre Mim </a></li>
+            <li><a href="#englishMap"> Aprender </a></li>
+            <li><a href="#mission"> Missão </a></li>
+            <li class="login"><a href="login.html"> Login </a></li>
+        </nav>    
+    </header>
+
+    <section id="hero">
+        <div id="heroContent">
+            <div class="heroTitle">
+                <h1>A importância do inglês no mundo!</h1>
+            </div>
+            <div class="heroParagraph">
+                <p>O inglês é um idioma essencial no mundo moderno, 
+                   atuando como uma ponte entre diferentes culturas e línguas. 
+                   Aprender sobre suas variações e como ele é falado em diferentes países 
+                   pode enriquecer a compreensão dessa língua global e suas nuances em 
+                   cada localidade.
+                </p>
+            </div>
+            <div class="btnLearnMore">
+                <button> <a href="#englishMap"> Aprender Mais 🌍 </a></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="aboutMe">
+        <div id="myImage">
+            <img src="/Site/public/assets/images/rafaelCalderon.png" alt="Foto de Rafael Prazeres Calderon">
+        </div>
+        <div class="aboutMeText">
+            <h2>Sobre Mim</h2>
+            <p>Meu nome é Rafael Prazeres Calderon e tenho 18 anos. Atualmente, estudo Análise e Desenvolvimento de Sistemas na SPTech.
+                Desde pequeno, sempre tive uma grande curiosidade por idiomas; o que começou como interesse virou uma verdadeira paixão e um hobby que me acompanha até hoje.
+                Atualmente, estudo também o japonês, mas o inglês britânico e australiano continuam sendo meus favoritos.
+                Aprender novas línguas me inspira e me faz enxergar o mundo de diferentes perspectivas.
+            </p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="englishMap">
+        <div class="countriesSpeakEnglish">
+            <img src="/Site/public/assets/images/countries-english-speakers.png" alt="Infográfico de países que falam inglês">
+        </div>
+        <div class="explainingCountries">
+            <h2>Países que mais falam inglês</h2>
+            <p>Este infográfico mostra quais são os países com o maior número de falantes da língua inglesa.
+               Entre os principais, destacam-se <span id="red"> Estados Unidos </span>, <span id="blue"> Reino Unido </span> e <span id="green">Austrália</span>. <br>
+               Cada um com seu próprio sotaque, expressões e estilo de comunicação.
+                <br>
+               Na próxima seção, você poderá descobrir curiosidades sobre as diferenças do inglês falado e escrito nesses três países, além de participar de quizzes e minijogos interativos.
+               Divirta-se aprendendo!
+            </p>
+        </div>
+    </section>
+
+    <section id="learn">
+        <div class="learningTitle">
+            <div class="leftSide">
+                <h2>A origem da língua inglesa em cada país</h2>
+
+                <div class="usa" onmouseenter="exibirUS()" onmouseleave="leave()">
+                    <h3>Inglês Estadunidense</h3>
+                </div>
+
+                <div class="uk" onmouseenter="exibirUK()" onmouseleave="leave()">
+                    <h3>Inglês Britânico</h3>
+                </div>
+
+                <div class="aussie" onmouseenter="exibirAussie()" onmouseleave="leave()">
+                    <h3>Inglês Australiano</h3>
+                </div>
+
+                <img class="usFlag" src="/Site/public/assets/images/usaFlag.png" alt="">
+                <img class="ukFlag" src="/Site/public/assets/images/ukFlag.png" alt="">
+                <img class="aussieFlag" src="/Site/public/assets/images/australiaFlag.png" alt="">
+            </div>
+
+            <div class="rightSide">
+                <div class="aboutUsEnglish">
+                    <h2>Inglês Estadunidense</h2>
+                    <p>O Inglês Americano deriva do Inglês Britânico. A língua inglesa começou a ser falado nos Estados Unidos da América (EUA) devido ao expansionismo europeu, quando este país ainda era uma colônia. Este tipo de idioma teve seu início no século XVI, por influência da Renascença. Com isso, começaram a surgir novas palavras, que, posteriormente, pertenceriam ao Inglês Americano.
+                    <br>O Inglês Americano é falado em cerca de 50 países, sendo mais utilizado do que o Inglês Britânico. Além disso, cerca de 70% de artigos científicos são escritos neste idioma. Devido a grande extensão de países que utilizam o Inglês Americano para se comunicar, ele pode apresentar algumas diversificações, mas não deve ser confundido com o Inglês Britânico.</p> 
+                </div>
+
+                <div class="aboutUKEnglish">
+                    <h2>Inglês Britânico</h2>
+                    <p>O Inglês Britânico faz referência ao idioma inglês falado no Reino Unido, que é composto por Inglaterra, País de Gales, Escócia e Irlanda do Norte. Porém, cada país tem suas peculiaridades falar e escrever o idioma, com diferenças no vocabulário e na pronúncia, devido a isso o Inglês Britânico apresenta grandes diversificações.
+                    <br>O Inglês Britânico apresenta em grande parte do seu vocabulário palavras de origem germânica e anglo-saxônica. Essa influência ocorre devido a permanência desses povos na Grã-Bretanha a partir do século V. Esse idioma tem ainda um legado do Império Romano, que deixou marcas do latim no Inglês Britânico, e dos escandinavos e dinamarqueses, que invadiram a região da Grã-Bretanha no século X.</p>  
+                </div>
+
+                <div class="aboutAussieEnglish">
+                    <h2>Inglês Australiano</h2>
+                    <p>Colonos do Reino Unido chegaram em 1788 às terras que hoje são a Austrália. Naquela época, o crime nas cidades britânicas havia se tornado um problema real e as prisões estavam lotadas. A Inglaterra já havia enviado criminosos para os Estados Unidos, após a Guerra de Independência, então isso estava fora de cogitação. Foi assim que eles decidiram os enviar em uma viagem de oito meses de navio para a Austrália.
+                    <br>Os colonos britânicos vieram de todo o Reino Unido e já tinham uma variedade de sotaques. Portanto, eles tiveram que mudar os seus dialetos e sotaques aos poucos para serem compreendidos entre eles. Essas mudanças na língua inglesa na Austrália teriam continuado ao longo das gerações e resultaram no inglês australiano que existe hoje.</p>
+                </div>
+            </div>
+        </div>    
+    </section>
+
+    <hr>
+
+    <section id="mission">
+        <div class="sgd">
+            <img src="/Site/public/assets/images/ods4.png" alt="Explicação do Objetivo de Desenvolvimento Sustável 4">
+        </div>
+        <div class="sgdExplain">
+            <div class="sgdTitle">
+                <h2>Objetivo de Desenvolvimento Sustável 4</h2>
+            </div>
+            <div class="sgdParagraph">
+                <p>"Promover o acesso equitativo a informação e a comunicação para todos, em todos os lugares, e para todos os tempos"</p>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer>
+        <div class="logo">
+            <img src="https://placehold.co/200x60" alt="">
+        </div>
+        <nav>
+            <li><a href="#"> Início </a></li>
+            <li><a href="#heroContent"> Sobre Mim </a></li>
+            <li><a href="#"> Aprender </a></li>
+            <li><a href="#"> Minigames </a></li>
+        </nav>    
+    </header>
+    </footer>
+
+    <script src="/Site/public/js/script.js"></script>
+</body>
+</html>
+
+<script>
+    const usBtn = document.querySelector('.usa');
+    const ukBtn = document.querySelector('.uk');
+    const aussieBtn = document.querySelector('.aussie');
+
+    const us = document.querySelector('.aboutUsEnglish');
+    const uk = document.querySelector('.aboutUKEnglish');
+    const aus = document.querySelector('.aboutAussieEnglish');
+
+    const usFlag = document.querySelector('.usFlag');
+    const ukFlag = document.querySelector('.ukFlag');
+    const aussieFlag = document.querySelector('.aussieFlag');
+
+    function exibirUS() {
+        us.style.display = 'flex';
+        uk.style.display = 'none';
+        aus.style.display = 'none';
+        usFlag.style.display = 'block';
+    }
+    function exibirUK() {
+        us.style.display = 'none';
+        uk.style.display = 'flex';
+        aus.style.display = 'none';
+        ukFlag.style.display = 'block';
+    }
+    function exibirAussie() {
+        us.style.display = 'none';
+        uk.style.display = 'none';
+        aus.style.display = 'flex';
+        aussieFlag.style.display = 'block';
+    }
+
+    function leave() {
+        us.style.display = 'none';
+        uk.style.display = 'none';
+        aus.style.display = 'none';
+        usFlag.style.display = 'none';
+        ukFlag.style.display = 'none';
+        aussieFlag.style.display = 'none';
+    }
+</script>
