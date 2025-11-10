@@ -47,7 +47,7 @@ function signUp() {
         setTimeout(() => {
             img.classList.remove("right");
             img.classList.add("imgOverflow");
-        }, 2000);
+        }, 1000);
 
         setTimeout(() => {
             msgSignup.style.display = 'none';

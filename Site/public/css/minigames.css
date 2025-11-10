@@ -23,6 +23,11 @@ body {
     color: #ffffff;
 }
 
+#minigames .cards h4 {
+    text-align: center;
+    width: 13vw;
+}
+
 #minigames .secondGameCard {
     background-repeat: no-repeat;
     background-size: cover;

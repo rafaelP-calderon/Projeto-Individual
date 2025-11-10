@@ -184,16 +184,11 @@ main {
     font-size: 0.8vw;
 }
 
-.container .loginSide .options .createAccount button:hover {
-    transition: 0.4s ease-in-out;
-    color: #ff0000;
-}
-
+.container .loginSide .options .createAccount button:hover,
 .container .loginSide .options .forgotPasswd button:hover {
-    color: #ffffff;
     transition: 0.4s ease-in-out;
+    color: #ffffff;
 }
-
 
 .goBackLogin {
     display: flex;

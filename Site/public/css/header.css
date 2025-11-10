@@ -1,18 +1,20 @@
 header {
     display: flex;
     justify-content: space-around;
-    padding: 0.7vw;
     color: #ffffff;
     position: fixed;
     width: 100%;
-    background: ccc;
+    height: 13%;
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     z-index: 1000;
 }
 
-header .logo img {
-
+header .logo img{
+    position: absolute;
+    top: -1.5vw;
+    left: 13vw;
+    width: 10%;
 }
 
 header nav {

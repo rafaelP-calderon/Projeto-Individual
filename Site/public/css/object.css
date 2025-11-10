@@ -17,7 +17,7 @@ main {
     align-items: center;
     height: 55vh;
     width: 20vw;
-    gap: 1vw;
+    gap: 10vw;
     position: relative;
     background-color: rgba(245, 245, 245, 0.4);
     backdrop-filter: blur(1vw);

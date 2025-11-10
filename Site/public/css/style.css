@@ -33,7 +33,7 @@ html {
     display: flex;
     justify-content: flex-start;
     border: none;
-    background: rgb(26, 111, 126);
+    background: #4682B4;
     padding: 0.6vw;
     color: #ffffff;
     cursor: pointer;
@@ -56,7 +56,7 @@ html {
     justify-content: space-evenly;
     padding: 5vw;
     flex-direction: row-reverse;
-    background-color: #d7e9f7;;
+    background-color: #1D1F2C;
 }
 
 #aboutMe #myImage img{
@@ -67,12 +67,14 @@ html {
     margin-right: 2vw;
     object-fit: cover;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid #ffffff;
     filter: blur(2vw);
 }
 
 #aboutMe .aboutMeText {
     text-align: justify;
     font-size: 1vw;
+    color: #ffffff;
 }
 
 #aboutMe .aboutMeText h2 {
@@ -90,7 +92,7 @@ html {
     align-items: center;
     justify-content: space-evenly;
     padding: 5vw;
-    background-color: #e7ebee;
+    background-color: #1D1F2C;
 }
 
 #englishMap .countriesSpeakEnglish img{
@@ -102,7 +104,7 @@ html {
     object-fit: cover;
     border: 1px solid #000000;
     box-shadow: 1px 1px 20px #000000;
-    background-color: #d7f3ea;
+    background-color: #f3ebeb;
 }
 
 #englishMap .explainingCountries {
@@ -110,6 +112,7 @@ html {
     width: 30vw;
     font-size: 1vw;
     line-height: 1.8vw;
+    color: #ffffff;
 }
 
 #englishMap h2 {
@@ -118,16 +121,17 @@ html {
 
 #learn {
     padding: 5vw;
-    background-color: #e7ebee;
+    background-color: #1D1F2C;
 }
 
 .learningTitle {
     display: flex;
     align-items: center;
+    color: #ffffff;
 }
 
 .learningTitle .leftSide {
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
     gap: 1vw;
     display: flex;
     align-items: center;
@@ -135,10 +139,10 @@ html {
     padding: 2vw;
     height: 20vw;
     box-shadow: 1px 1px 20px #000000;
-    background-color: #ffffff;
     border-radius: 1em;
     width: 100vw;
     position: relative;
+    background-color: rgba(29, 31, 44, 0.4);
 }
 
 .leftSide h2 {
@@ -165,16 +169,8 @@ html {
 }
 
 .leftSide .usa{
-    background-color: #ff0000;
+
     color: #ffffff;
-}
-
-.leftSide .uk{
-    background-color: #0000ff;
-}
-
-.leftSide .aussie{
-    background-color: #008000;
 }
 
 .learningTitle .rightSide {
@@ -225,8 +221,9 @@ html {
     align-items: center;
     justify-content: space-evenly;
     padding: 10vw;
-    background-color: #ffffff;
+    background-color: #1D1F2C;
     flex-direction: row-reverse;
+    color: #ffffff;
 }
 
 #mission .sgd {
@@ -234,6 +231,8 @@ html {
     align-items: center;
     justify-content: end;
     width: 50%;
+    box-shadow: 1px 1px 20px #000000;
+    border-radius: 1em;
 }
 
 #mission .sgd img {
@@ -254,11 +253,14 @@ footer nav {
     align-items: center;
     justify-content: center;
     gap: 1vw;
-    padding: 2vw;
     width: 100%;
-    background-color: #4682b4;
+    background-color: #000000;
     color: #ffffff;
     font-size: 1vw;
+}
+
+footer .logo{
+    background: #000000;
 }
 
 .buttons {
@@ -289,4 +291,8 @@ footer nav {
 
 .buttons .btnLogin {
     background-color: #4682b4;
+}
+
+.logo img {
+    width: 30%;
 }
