@@ -16,13 +16,6 @@ body {
     color: #ffffff;
 }
 
-#minigames .firstGameCard {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-}
-
 #minigames .cards h4 {
     text-align: center;
     width: 13vw;
@@ -52,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 50%;
     padding: 4vw;
     gap: 1vw;
     border-radius: 0.7vw;

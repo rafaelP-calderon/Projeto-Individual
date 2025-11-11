@@ -1,0 +1,12 @@
+body {
+    background-color: #000000;
+}
+
+#sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
