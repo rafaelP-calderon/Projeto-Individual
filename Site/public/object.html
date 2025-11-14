@@ -17,7 +17,7 @@
 <body>
     <main>
         <div class="card">
-            <div class="title">
+            <div class="title displayNow">
                 <h1>Name the Object</h1>
             </div>
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="btn">
-                    <button onclick="">Próximo</button>
+                    <button onclick="responder()">Próximo</button>
                 </div>
             </div>
         </div>
@@ -49,3 +49,31 @@
     <script src="/Site/public/js/object.js"></script>
 </body>
 </html>
+
+<script>
+    var objects = [
+        { img: 'https://placehold.co/300x200', ans: 'apple' },
+        { img: 'https://placehold.co/200x200', ans: 'banana' },
+        { img: 'https://placehold.co/400x200', ans: 'orange' },
+        { img: 'https://placehold.co/100x200', ans: 'pear' }
+    ];
+
+    // guarda o índice da imagem atual
+    var indexAtual = 0;
+
+    // função para mostrar imagem (apenas exemplo, adapte ao seu HTML)
+    function mostrarImagem() {
+        document.getElementById("img").src = objects[indexAtual].img;
+    }
+
+    function responder() {
+        var resposta = answer.value.toLowerCase();
+        var respostaCorreta = objects[indexAtual].ans.toLowerCase();
+
+        if (resposta === respostaCorreta) {
+            alert("Parabéns, você acertou!");
+        } else {
+            alert("Você errou! Tente novamente.");
+        }
+    }
+</script>

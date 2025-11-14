@@ -23,7 +23,7 @@ function logInInputs() {
         msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/Site/public/assets/aguarde-pink3.gif">`;
         
         setTimeout(() => {
-            window.location.href = "simulador.html";
+            window.location.href = "learn.html";
         }, 2000);
     } else {
         msgLogin.style.display = 'flex';

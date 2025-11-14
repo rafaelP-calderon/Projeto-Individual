@@ -21,6 +21,7 @@ main {
     position: relative;
     background-color: rgba(245, 245, 245, 0.4);
     backdrop-filter: blur(1vw);
+    border-radius: 0.4vw;
 }
 
 .card input {

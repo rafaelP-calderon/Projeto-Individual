@@ -4,9 +4,59 @@ body {
 
 #sobre {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    flex-direction: column;
     color: #ffffff;
     min-height: 100vh;
+    gap: 1vw;
+    background: url(/Site/public/assets/images/pexels-ffion-scott-1772560678-28199964.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#sobre .title {
+    font-size: 1.8vw;
+}
+
+#sobre .paragraph {
+    width: 20vw;
+    font-size: 1vw;
+    line-height: 1.4vw;
+    text-align: justify;
+}
+
+#sobre .content {
+    margin-left: 3vw;
+}
+
+#sobre .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sobre .buttons button{
+    background: none;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 0.6vw;
+    margin-top: 2vw;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9vw;
+}
+
+#sobre .buttons button:hover{
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 1vw #ffffff;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-0.26vw);
+}
+
+#sobre .paragraph .aqui {
+    color: #ff0000;
+    cursor: pointer;
 }
 
