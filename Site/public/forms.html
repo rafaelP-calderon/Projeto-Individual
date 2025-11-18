@@ -49,20 +49,12 @@
             </div>
 
             <button type="button" onclick="send()"> Enviar </button>
-            <p id="green">Questionário enviado com sucesso!</p>
+            <!-- <p id="green">Questionário enviado com sucesso!</p> -->
         </form>
     </main>
 </body>
 </html>
 
 <script>
-    var nome = prompt( "Insira seu nome" );
-    welcome.innerHTML = 'Olá, ' + nome + '!';;
-
-    // function send() {
-    //     green.display.style = 'flex';
-    //     setTimeout(() => {
-    //         window.location.href = 'minigames.html';
-    //     }, 2000);
-    // }
+    welcome.innerHTML = sessionStorage.getItem('validateUser');
 </script>

@@ -17,11 +17,21 @@
 <body>
     <main>
         <div class="card">
+
             <div class="title displayNow">
-                <h1>Name the Object</h1>
+                <h1 id="titleGame">Name the Object</h1>
             </div>
 
-            <div class="displayNow">
+            <div id="dialect">
+                <div class="usEnglish">
+                    <button onclick="usa()">USA</button>
+                </div>
+                <div class="ukEng">
+                    <button onclick="uk()">UK</button>
+                </div>
+            </div>
+
+            <div class="displayNow" id="displayNow">
                 <div class="start">
                     <button onclick="sendAnswer()">Iniciar</button>
                 </div>
@@ -30,9 +40,9 @@
                 </div>
             </div>
 
-            <div class="displayLater">
+            <div class="displayLater" id="displayLater">
                 <div class="objectImg">
-                    <img src="https://placehold.co/200x200" alt="">
+                    <img id="img" src="" alt="">
                 </div>
 
                 <div class="input">
@@ -42,6 +52,11 @@
                 <div class="btn">
                     <button onclick="responder()">Próximo</button>
                 </div>
+                <div id="correct"><p>Correto!</p></div>
+            </div>
+
+            <div id="results">
+    
             </div>
         </div>
     </main>
@@ -52,28 +67,85 @@
 
 <script>
     var objects = [
-        { img: 'https://placehold.co/300x200', ans: 'apple' },
-        { img: 'https://placehold.co/200x200', ans: 'banana' },
-        { img: 'https://placehold.co/400x200', ans: 'orange' },
-        { img: 'https://placehold.co/100x200', ans: 'pear' }
+        { img: 'https://img.freepik.com/psd-gratuitas/close-up-de-uma-maca-deliciosa_23-2151868338.jpg?semt=ais_incoming&w=740&q=80', ans: 'apple' },
+        { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZbB_doR9LVg_xVbDXOOZc3TNbgNCEIzLLKw&s', ans: 'orange' },
+        { img: 'https://www.hortifrutiorganico.com.br/121-large_default/banana-organica-prata-1-kg.jpg', ans: 'banana' },
+        { img: 'https://img.freepik.com/free-vector/vintage-pear-illustration_53876-112720.jpg?semt=ais_hybrid&w=740&q=80', ans: 'pear' }
     ];
 
-    // guarda o índice da imagem atual
-    var indexAtual = 0;
+    img.src = `${objects[0].img}`;
 
-    // função para mostrar imagem (apenas exemplo, adapte ao seu HTML)
-    function mostrarImagem() {
-        document.getElementById("img").src = objects[indexAtual].img;
+    var acertos = 0;
+    var erros = 0;
+
+    dialect.style.display = 'none';
+    results.style.display = 'none';
+    correct.style.display = 'none';
+    displayLater.style.display = 'none';
+    displayNow.style.display = 'flex';
+
+    function sendAnswer() {
+        displayNow.style.display = 'none';
+        dialect.style.display = 'flex';
+    }
+
+    function usa() {
+        dialect.style.display = 'none';
+        displayLater.style.display = 'flex';
+    }
+
+    function uk() {
+        dialect.style.display = 'none';
+        displayLater.style.display = 'flex';
     }
 
     function responder() {
-        var resposta = answer.value.toLowerCase();
-        var respostaCorreta = objects[indexAtual].ans.toLowerCase();
+        var respostas = answer.value;
+        var padrao = respostas.toLowerCase();
+        correct.style.display = 'flex';
 
-        if (resposta === respostaCorreta) {
-            alert("Parabéns, você acertou!");
-        } else {
-            alert("Você errou! Tente novamente.");
+        setTimeout(() => {
+            for (var i = 0; i < objects.length; i++) {
+            if(i == 0 && respostas == objects[i].ans) {
+                img.src = '';
+                img.src = `${objects[i + 1].img}`;
+                acertos++;            
+                correct.style.display = 'none';
+            } else {
+                erros++;
+            }
+            if(i == 1 && respostas == objects[i].ans) {
+                img.src = '';
+                img.src = `${objects[i + 1].img}`;
+                acertos++;
+                correct.style.display = 'none';
+            } else {
+                erros++;
+            }
+            if(i == 2 && respostas == objects[i].ans) {
+                img.src = '';
+                img.src = `${objects[i + 1].img}`;
+                acertos++;
+                correct.style.display = 'none';
+            } else {
+                erros++;
+            }
+
+            if(i == 3 && respostas == objects[i].ans) {
+                img.src = '';
+                titleGame.style.display = 'none';
+                acertos++;
+                correct.style.display = 'none';
+                displayNow.style.display = 'none';
+                displayLater.style.display = 'none';
+                results.innerHTML = `<h1>Resultados</h1>
+                                     <p>Acertos: ${acertos}</p>
+                                     <p>Erros: ${0}</p>`;
+                results.style.display = 'flex'
+            } else {
+                erros++;
+            }
         }
-    }
+        }, 1500);
+    } 
 </script>

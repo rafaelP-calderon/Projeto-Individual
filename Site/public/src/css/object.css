@@ -17,11 +17,15 @@ main {
     align-items: center;
     height: 55vh;
     width: 20vw;
-    gap: 10vw;
+    gap: 2vw;
     position: relative;
     background-color: rgba(245, 245, 245, 0.4);
     backdrop-filter: blur(1vw);
     border-radius: 0.4vw;
+}
+
+.card img {
+    width: 50%;
 }
 
 .card input {
@@ -55,11 +59,9 @@ main {
 }
 
 .displayLater {
-    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1.5vw;
 }
 
 .goBack {
@@ -75,4 +77,38 @@ main {
     display: flex;
     align-items: center;
     gap: 1vw;
+}
+
+.card .objectImg {
+    display: flex;
+    justify-content: center;
+}
+
+.card .input {
+    margin-bottom: 1vw;
+}
+
+.card .btn, .input {
+    display: flex;
+    justify-content: center;
+}
+
+#correct {
+    color: rgb(0, 255, 0);
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#dialect {
+    display: flex;
+    gap: 1vw;
+}
+
+#dialect button {
+    width: 5vw;
 }

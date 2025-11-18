@@ -104,73 +104,71 @@
 </html>
 
 <script>
-    function entrar() {
-        aguardar();
+    var img = document.querySelector(".imgOverflow");
+    var msgSignup = document.querySelector(".accountCreated");
+    var msgLogin = document.querySelector(".accountLogIn");
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+    function logIn() {
+        img.classList.remove("imgOverflow");
+        img.classList.add("right");
 
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+        setTimeout(() => {
+            msgLogin.style.display = 'none';    
+        }, 2000);
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
+    function logInInputs() {
+        var validateEmail = emailLogin.value;
+        var validatePasswd = confirmPasswdLogin.value;
+
+        if(validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
+            || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
+
+            msgLogin.style.display = 'flex';
+            msgLogin.style.color = '#00ff00';
+            msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/Site/public/assets/aguarde-pink3.gif">`;
+            
+            setTimeout(() => {
+                window.location.href = "learn.html";
+            }, 2000);
+        } else {
+            msgLogin.style.display = 'flex';
+            msgLogin.style.color = '#ff0000';
+            msgLogin.innerHTML = 'Email e/ou senha incorretos';
+        }
+    }
+    function signUp() {
+        var validateUser = username.value;
+        var validateEmail = emailUser.value;
+        var validatePasswd = passwdUser.value;
+
+        sessionStorage.setItem(validateUser);
+
+        if(validateUser.length >= 3 && validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
+            || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
+
+            img.classList.remove("imgOverflow");
+            img.classList.add("right");
+
+            msgSignup.style.display = 'flex';
+            
+            setTimeout(() => {
+                img.classList.remove("right");
+                img.classList.add("imgOverflow");
+            }, 1000);
+
+            setTimeout(() => {
+                msgSignup.style.display = 'none';
+            }, 2100);
+
+        } else {
+            alert("Por favor, preencha os campos corretamente.");
+        }
+        
     }
 
+    function alreadyHave() {
+        img.classList.remove("right");
+        img.classList.add("imgOverflow");
+    }
 </script>
