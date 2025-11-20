@@ -7,7 +7,7 @@ html {
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    background-image: url(/Site/public/assets/images/Gemini_Generated_Image_gbsxi1gbsxi1gbsx.png);
+    background-image: url(/assets/images/Gemini_Generated_Image_gbsxi1gbsxi1gbsx.png);
     background-size: cover;
     background-position: center;
 }

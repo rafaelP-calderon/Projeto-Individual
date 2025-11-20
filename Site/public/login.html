@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="shortcut icon" href="/Site/public/assets/favicon/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="/Site/public/src/css/signup.css">
-    <link rel="stylesheet" href="/Site/public/src/css/header.css">
-    <link rel="stylesheet" href="/Site/public/src/css/reset.css">
+    <link rel="shortcut icon" href="/assets/favicon/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/src/css/signup.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,7 +26,7 @@
                 <a href="index.html"> <i class="fa-solid fa-arrow-left"></i> </a> <button> <a href="index.html"> Voltar </a> </button>
             </div>
             <div class="imgOver">
-                <img class="imgOverflow" src="/Site/public/assets/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
+                <img class="imgOverflow" src="/assets/images/pexels-sebastian-coman-photography-1598188-3621808.jpg" alt="">
             </div>
             <div class="signSide">
                 <h3>Cadastro</h3>
@@ -45,6 +45,7 @@
                         <input type="password" id="passwdUser" placeholder=" "> <label for="passwdUser">Senha</label> <i
                             class="fa-solid fa-lock"></i>
                     </div>
+                    <div id="div_mensagem"></div>
                     <p class="erroPasswd">A senha deve conter pelo menos 8 caracteres.</p>
                 </div>
                 <div class="btnSignup">
@@ -89,7 +90,7 @@
 
                 <div class="accountLogIn">
                     <p>Logado com sucesso!</p>
-                    <img src="/Site/public/assets/aguarde-pink3.gif" alt="">
+                    <img src="/assets/aguarde-pink3.gif" alt="">
                 </div>
 
             </div>
@@ -99,7 +100,7 @@
         </div>
     </main>
 
-    <script src="/Site/public/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
 
@@ -121,28 +122,57 @@
         var validateEmail = emailLogin.value;
         var validatePasswd = confirmPasswdLogin.value;
 
-        if(validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
-            || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
+        // if(validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
+        //     || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
 
+        //     msgLogin.style.display = 'flex';
+        //     msgLogin.style.color = '#00ff00';
+        //     msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/public/assets/aguarde-pink3.gif">`;
+            
+        //     setTimeout(() => {
+        //         window.location.href = "learn.html";
+        //     }, 2000);
+        // } else {
+        //     msgLogin.style.display = 'flex';
+        //     msgLogin.style.color = '#ff0000';
+        //     msgLogin.innerHTML = 'Email e/ou senha incorretos';
+        // }
+
+        fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            emailServer: validateEmail,
+            senhaServer: validatePasswd
+        })
+    })
+    .then(resposta => {
+        if (resposta.ok) {
             msgLogin.style.display = 'flex';
             msgLogin.style.color = '#00ff00';
-            msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/Site/public/assets/aguarde-pink3.gif">`;
-            
+            msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/assets/aguarde-pink3.gif">`;
+
             setTimeout(() => {
                 window.location.href = "learn.html";
             }, 2000);
         } else {
             msgLogin.style.display = 'flex';
             msgLogin.style.color = '#ff0000';
-            msgLogin.innerHTML = 'Email e/ou senha incorretos';
+            msgLogin.innerHTML = 'Email e/ou senha inválidos';
         }
+    })
+    .catch(erro => {
+        console.error("ERRO NO LOGIN:", erro);
+        msgLogin.style.display = 'flex';
+        msgLogin.style.color = 'red';
+        msgLogin.innerHTML = 'Erro no servidor.';
+    });
     }
+
     function signUp() {
         var validateUser = username.value;
         var validateEmail = emailUser.value;
         var validatePasswd = passwdUser.value;
-
-        sessionStorage.setItem(validateUser);
 
         if(validateUser.length >= 3 && validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
             || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
@@ -164,11 +194,35 @@
         } else {
             alert("Por favor, preencha os campos corretamente.");
         }
-        
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nomeServer: validateUser,
+                emailServer: validateEmail,
+                senhaServer: validatePasswd
+            })
+        })
+        .then(resposta => {
+            if (resposta.ok) {
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "login.html";
+            } else {
+                alert("Erro ao realizar o cadastro.");
+            }
+        })
+        .catch(erro => {
+            console.error("Erro:", erro);
+        });
     }
 
     function alreadyHave() {
         img.classList.remove("right");
         img.classList.add("imgOverflow");
     }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
 </script>
