@@ -3,7 +3,7 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(/Site/public/assets/images/nyc.jpg);
+    background: url(/assets/images/nyc.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -17,6 +17,8 @@ var objectsUK = [
     imgUK.src = `${objectsUK[0].img}`;
     imgUSA.src = `${objectsUSA[0].img}`;
 
+    var palavra = objectsUK[0].ans;
+
     var acertos = 0;
     var erros = 0;
 
@@ -131,11 +133,23 @@ var objectsUK = [
                 </div>  `;
                     results.style.display = 'flex';
                     acertou = true;
-                } 
-            }
-
-            if(!acertou) {
-                erros++;
-                alert("Erro");
-            }
-        }
+                    var pont = acertos;
+                    console.log(pont);
+                } }
+                fetch("/questionario/cadastrar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    palavra
+                })
+                })
+                .then(resposta => {
+                    if(resposta.ok) {
+                        window.location = 'learn.html';
+                    } else {
+                        alert(Error);
+                    }
+                }
+            )  .catch(err => console.error(err));
+                    }
+                

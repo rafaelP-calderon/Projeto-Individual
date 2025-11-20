@@ -98,7 +98,18 @@ const usBtn = document.querySelector('.usa');
         var validateEmail = emailUser.value;
         var validatePasswd = passwdUser.value;
 
-        if(validateUser.length >= 3 && validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                nomeServer: validateUser,
+                emailServer: validateEmail,
+                senhaServer: validatePasswd
+            })
+        })
+        .then(resposta => {
+            if (resposta.ok) {
+                if(validateUser.length >= 3 && validateEmail.includes("@") && validateEmail.includes(".") && validatePasswd.length >= 8 && (validatePasswd.includes('!') 
             || validatePasswd.includes('#') || validatePasswd.includes('$') || validatePasswd.includes('%') || validatePasswd.includes('&')) ) {
 
             img.classList.remove("imgOverflow");
@@ -114,24 +125,7 @@ const usBtn = document.querySelector('.usa');
             setTimeout(() => {
                 msgSignup.style.display = 'none';
             }, 2100);
-
-        } else {
-            alert("Por favor, preencha os campos corretamente.");
-        }
-
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                nomeServer: validateUser,
-                emailServer: validateEmail,
-                senhaServer: validatePasswd
-            })
-        })
-        .then(resposta => {
-            if (resposta.ok) {
-                alert("Cadastro realizado com sucesso!");
-                window.location.href = "login.html";
+            }   
             } else {
                 alert("Erro ao realizar o cadastro.");
             }

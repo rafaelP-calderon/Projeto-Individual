@@ -24,6 +24,7 @@ function send() {
     .then(res => {
         if(res.ok) {
             alert("Questionário enviado com sucesso!");
+            window.location = 'minigames.html';
         } else {
             alert("Erro ao enviar questionário");
         }

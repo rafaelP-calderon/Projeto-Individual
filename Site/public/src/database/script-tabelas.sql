@@ -1,10 +1,7 @@
-create database Individual;
-use Individual;
-
 create table Usuario (
 	idUsuario int primary key auto_increment,
     nome varchar(90),
-    email varchar(255),
+    email varchar(255) unique,
     senha varchar(90),
     dtCadastro datetime
 );
@@ -12,9 +9,9 @@ create table Usuario (
 create table Questionario (
 	idQuestionario int primary key auto_increment,
     idade int,
-    dialeto enum('UK', 'US', 'AUS'),
+    dialeto enum('Estadunidense', 'Britânico'),
     familiaridade varchar(45),
-    frequencia int,
+    frequencia varchar(45),
     fkUsuario int,
     constraint fkUsuarioQuestionario foreign key (fkUsuario) references Usuario(idUsuario)
 );

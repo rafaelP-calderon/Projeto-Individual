@@ -9,7 +9,7 @@ body {
     justify-content: center;
     flex-direction: column;
     min-height: 115vh;
-    background: url(/Site/public/assets/images/pexels-pixabay-258117.jpg);
+    background: url(/assets/images/pexels-pixabay-258117.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
