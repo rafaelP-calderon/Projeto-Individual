@@ -54,10 +54,10 @@ const usBtn = document.querySelector('.usa');
     }
 
     function logInInputs() {
-        var validateEmail = emailLogin.value;
-        var validatePasswd = confirmPasswdLogin.value;
+    var validateEmail = emailLogin.value;
+    var validatePasswd = confirmPasswdLogin.value;
 
-        fetch("/usuarios/autenticar", {
+    fetch("/usuarios/autenticar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -66,27 +66,32 @@ const usBtn = document.querySelector('.usa');
         })
     })
     .then(resposta => {
-        if (resposta.ok) {
-            msgLogin.style.display = 'flex';
-            msgLogin.style.color = '#00ff00';
-            msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/assets/aguarde-pink3.gif">`;
-
-            setTimeout(() => {
-                window.location.href = "learn.html";
-            }, 2000);
-        } else {
+        if (!resposta.ok) {
+            // Login deu errado
             msgLogin.style.display = 'flex';
             msgLogin.style.color = '#ff0000';
             msgLogin.innerHTML = 'Email e/ou senha inválidos';
+            throw new Error("Login inválido");
         }
+        return resposta.json();  // <-- AQUI VOCÊ PEGA O JSON CORRETAMENTE
+    })
+    .then(resultado => {
+        // Agora SIM você tem resultado.usuario.idUsuario
+        localStorage.setItem("idUsuario", resultado.usuario.idUsuario);
+
+        msgLogin.style.display = 'flex';
+        msgLogin.style.color = '#00ff00';
+        msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/assets/aguarde-pink3.gif">`;
+
+        setTimeout(() => {
+            window.location.href = "learn.html";
+        }, 2000);
     })
     .catch(erro => {
         console.error("ERRO NO LOGIN:", erro);
-        msgLogin.style.display = 'flex';
-        msgLogin.style.color = 'red';
-        msgLogin.innerHTML = 'Erro no servidor.';
     });
-    }
+}
+
 
     function signUp() {
         var validateUser = username.value;

@@ -35,8 +35,8 @@ function cadastrar(req, res) {
 }
 
 function autenticar(req, res) {
-    var email = req.body.emailServer?.trim();
-    var senha = req.body.senhaServer?.trim();
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
 
     if (!email) {
         return res.status(400).send("Seu email está undefined!");
@@ -46,7 +46,10 @@ function autenticar(req, res) {
     usuarioModel.autenticar(email, senha)
         .then(resultado => {
             if (resultado.length > 0) {
-                res.status(200).json({ mensagem: "Login realizado!", usuario: resultado[0] });
+                res.status(200).json({
+                       mensagem: "Login realizado!",
+                        usuario: resultado[0] 
+                    });
             } else {
                 res.status(403).send("Email e/ou senha inválidos");
             }

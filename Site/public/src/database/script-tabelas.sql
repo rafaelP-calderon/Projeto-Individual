@@ -9,14 +9,14 @@ create table Usuario (
     dtCadastro datetime
 );
 
-create table Formulario (
-	idFormulario int primary key auto_increment,
+create table Questionario (
+	idQuestionario int primary key auto_increment,
     idade int,
     dialeto enum('UK', 'US', 'AUS'),
     familiaridade varchar(45),
     frequencia int,
     fkUsuario int,
-    constraint fkUsuarioFormulario foreign key (fkUsuario) references Usuario(idUsuario)
+    constraint fkUsuarioQuestionario foreign key (fkUsuario) references Usuario(idUsuario)
 );
 
 create table Sessao (
