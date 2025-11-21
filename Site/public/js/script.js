@@ -67,16 +67,14 @@ const usBtn = document.querySelector('.usa');
     })
     .then(resposta => {
         if (!resposta.ok) {
-            // Login deu errado
             msgLogin.style.display = 'flex';
             msgLogin.style.color = '#ff0000';
             msgLogin.innerHTML = 'Email e/ou senha inválidos';
             throw new Error("Login inválido");
         }
-        return resposta.json();  // <-- AQUI VOCÊ PEGA O JSON CORRETAMENTE
+        return resposta.json();
     })
     .then(resultado => {
-        // Agora SIM você tem resultado.usuario.idUsuario
         localStorage.setItem("idUsuario", resultado.usuario.idUsuario);
 
         msgLogin.style.display = 'flex';
