@@ -1,5 +1,6 @@
 body {
     background-color: #000000;
+    position: relative;
 }
 
 #sobre {
@@ -14,6 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 #sobre .title {
@@ -60,3 +62,49 @@ body {
     cursor: pointer;
 }
 
+#user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    border-radius: 1vw; 
+    height: 4vw;
+    width: 9vw;
+    position: absolute;
+    right: 0;
+}
+
+#elements {
+    display: none;
+    flex-direction: column;
+}
+
+.fa-regular {
+    color: #ffffff;
+}
+
+#pfp {
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+    padding: 0.8vw;
+    cursor: pointer;
+}
+
+#pfp button {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* .cardLogout {
+    background-color: gray;
+    width: 20vw;
+    height: 7vw;
+    border-radius: 1vw;
+    position: absolute;
+    top: 5vw;
+    right: 0;
+    z-index: 9999;
+} */

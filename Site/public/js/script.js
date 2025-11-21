@@ -79,7 +79,7 @@ const usBtn = document.querySelector('.usa');
 
         msgLogin.style.display = 'flex';
         msgLogin.style.color = '#00ff00';
-        msgLogin.innerHTML = `Logado com sucesso! <img width="50px" src="/assets/aguarde-pink3.gif">`;
+        msgLogin.innerHTML = `Seja bem vindo, ${sessionStorage.USERNAME}! <img width="50px" src="/assets/aguarde-pink3.gif">`;
 
         setTimeout(() => {
             window.location.href = "learn.html";
@@ -95,6 +95,9 @@ const usBtn = document.querySelector('.usa');
         var validateUser = username.value;
         var validateEmail = emailUser.value;
         var validatePasswd = passwdUser.value;
+
+        sessionStorage.USERNAME = validateUser;
+        console.log(sessionStorage.USERNAME);
 
         fetch("/usuarios/cadastrar", {
             method: "POST",

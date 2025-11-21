@@ -1,8 +1,10 @@
+welcome.innerHTML = `Olá, ${sessionStorage.USERNAME}`;
+
 function send() {
-    var idade = document.getElementById("idade").value;
-    var dialeto = document.getElementById("dialeto").value;
-    var familiaridade = document.getElementById("familiaridade").value;
-    var frequencia = document.getElementById("frequência").value;
+    var idade = idadeUser.value;
+    var dialeto = dialetoUser.value;
+    var familiaridade = fam.value;
+    var frequencia = freq.value;
     var fkUsuario = localStorage.getItem("idUsuario");
 
     if(!idade || !dialeto || !familiaridade || !frequencia) {
