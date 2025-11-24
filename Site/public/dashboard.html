@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="inicializarDashboard()">
     <main>
         <aside>
             <h1>Dashboard</h1>
@@ -26,7 +26,7 @@
                 <h2>Percentual de acertos por Dialetos</h2>
 
                 <div class="elements">
-                    <p><span id="value">0%</span> <br> Inglês Estadunidense</p> <p><span id="value">0%</span> <br> Inglês Britânico</p>
+                    <p><span id="valueUS">0%</span> <br> Inglês Estadunidense</p> <p><span id="valueUK">0%</span> <br> Inglês Britânico</p>
                 </div>
             </div>
             <div class="card2">
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="card4">
-                <h3>Dialeto mais difícil: Inglês Britânico</p>
+                <h3>Dialeto mais difícil: <span id="dialectChosen"></span></p>
             </div>
             <div class="chart1">
                 <canvas id="myChart1"></canvas>
@@ -70,67 +70,3 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
-
-<script>
-
-    welcome.innerHTML = `Olá, ${sessionStorage.USERNAME}!`;
-
-  const ctx1 = document.getElementById('myChart1');
-
-  new Chart(ctx1, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue'],
-      datasets: [{
-        label: 'Acertos por Dialeto',
-        data: [12, 19],
-        backgroundColor: ['#4169E1', '#E63946'],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-          grid: {
-          color: 'rgba(200,200,200,1)', 
-          borderColor: '#ffffff',          
-          borderWidth: 2,                  
-          lineWidth: 1,                    
-          drawTicks: true
-        }
-        }
-      }
-    }
-  });
-
-  const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ['Britânico', 'Estadunidense'],
-    datasets: [{
-      label: 'Dialeto mais Escolhido',
-      data: [89, 55],
-      backgroundColor: ['#4169E1', '#E63946'],
-      borderWidth: 1,
-      barThickness: 60,
-    }]
-  },
-  options: {
-    indexAxis: 'y',  
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      x: { 
-            ticks: {
-            color: '#FFFFFF', // cor dos números no eixo x
-            font: { size: 14 }
-        },     
-        beginAtZero: true,
-        max: 100,
-      }
-    },
-  }});
-</script>

@@ -65,6 +65,7 @@
         return resposta.json();
     })
     .then(resultado => {
+        sessionStorage.EMAIL_USUARIO = validateEmail;
         localStorage.setItem("idUsuario", resultado.usuario.idUsuario);
 
         msgLogin.style.display = 'flex';

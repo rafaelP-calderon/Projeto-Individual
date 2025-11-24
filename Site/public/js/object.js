@@ -120,15 +120,15 @@ var objectsUK = [
     }
 }
 
-        function jogar() { 
-            displayLaterUK.style.display = 'none'; 
-            displayLaterUSA.style.display = 'none'; 
-            dialect.style.display = 'none'; 
-            results.style.display = 'none'; 
-            correctUK.style.display = 'none'; 
-            correctUSA.style.display = 'none'; 
-            displayNow.style.display = 'flex'; 
-            showTitle.style.display = 'flex'; 
-            location.reload('object.html'); 
-        }
+    function jogar() { 
+        displayLaterUK.style.display = 'none'; 
+        displayLaterUSA.style.display = 'none'; 
+        dialect.style.display = 'none'; 
+        results.style.display = 'none'; 
+        correctUK.style.display = 'none'; 
+        correctUSA.style.display = 'none'; 
+        displayNow.style.display = 'flex'; 
+        showTitle.style.display = 'flex'; 
+        location.reload('object.html'); 
+    }
                 
