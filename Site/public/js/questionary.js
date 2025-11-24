@@ -12,7 +12,7 @@ function send() {
         return;
     }
 
-    fetch("/questionario/cadastrar", {
+    fetch("/questionario/cadastrarQuestionario", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

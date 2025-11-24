@@ -158,6 +158,11 @@ html {
     padding: 0.5vw;
     cursor: pointer;
     box-shadow: 0.5px 0.5px 10px #000000;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
 }
 
 .leftSide .usa:hover, .leftSide .uk:hover, .leftSide .aussie:hover{

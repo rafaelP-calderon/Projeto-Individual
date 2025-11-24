@@ -3,7 +3,7 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #00247D, #ffffff 30%, #CF142B);
+    background: #06496a43;
 }
 
 form {
@@ -12,12 +12,11 @@ form {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    border: 0.15vw solid #000000;
-    width: 25vw;
-    height: 30vw;
+    box-shadow: 1px 1px 10px #000000;
+    width: 45vw;
+    height: 40vw;
     gap: 1vw;
     border-radius: 1vw;
-    background-color: rgba(255, 255, 255, 0.4);
 }
 
 form input {
@@ -27,18 +26,27 @@ form input {
     background: none;
     border: none;
     border-bottom: 1px solid #000000;
+    color: #000000;
+    font-weight: 800;
 }
 
 form input:focus {
     outline: none;
 }
 
+form .inputs-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+}
+
 form .inputs {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 80%;
-    margin-left: 4vw;
+    width: 100%;
+    margin-left: 8vw;
 }
 
 form button {

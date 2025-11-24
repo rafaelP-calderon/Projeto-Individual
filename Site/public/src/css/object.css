@@ -15,26 +15,31 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 55vh;
-    width: 20vw;
+    height: 100vh;
+    width: 100vw;
     gap: 2vw;
     position: relative;
-    background-color: rgba(245, 245, 245, 0.4);
+    background-color: rgba(41, 33, 33, 0.4);
     backdrop-filter: blur(1vw);
-    border-radius: 0.4vw;
 }
 
 .card img {
-    width: 50%;
+    width: 25vw;
+    height: 20vw;
+    border: 1px solid #000000;
 }
 
 .card input {
-    width: 15vw;
-    height: 2vw;
+    width: 25vw;
+    height: 3vw;
     text-align: center;
-    border: none;
-    border-bottom: 0.1vw solid #000000;
+    border: 1px solid #000000;
     background: none;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    border-radius: 0.7vw;
+    font-size: 1.3vw;
+    color: #ffffff;
 }
 
 .card input:focus {
@@ -45,17 +50,20 @@ main {
     background: none;
     border: 1px solid #000000;
     padding: 0.5vw;
-    width: 10vw;
+    width: 7vw;
     cursor: pointer;
     font-size: 0.8vw;
     font-weight: 700;
     background-color: #ffffff;
+    border-radius: 0.8vw;
 }
 
 .card button:hover {
     cursor: pointer;
     transition: 0.4s ease-in-out;
     transform: translateY(-0.15vw);
+    background-color: rgb(166, 166, 194);
+    border-radius: 1vw;
 }
 
 .displayLater {
@@ -80,15 +88,6 @@ main {
 }
 
 .card .objectImg {
-    display: flex;
-    justify-content: center;
-}
-
-.card .input {
-    margin-bottom: 1vw;
-}
-
-.card .btn, .input {
     display: flex;
     justify-content: center;
 }

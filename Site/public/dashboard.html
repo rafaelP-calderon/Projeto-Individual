@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/public/src/css/reset.css">
-    <link rel="stylesheet" href="/public/src/css/dashboard.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -13,36 +13,124 @@
 <body>
     <main>
         <aside>
-            <div class="title">
-                <h2>Dashboard</h2>
-            </div>
-            <div class="btns">
-                <p>Painel Geral</p>
-                <p>Idioms</p>
-                <p>Name the object</p>
+            <h1>Dashboard</h1>
+            <h3 id="welcome"></h3>
+            <div class="buttons">
+                <li>
+                    <button onclick="goBack()">Voltar</button>
+                </li>
             </div>
         </aside>
-        <div class="boxes">
-            <div class="box box1"></div>
-            <div class="box box2"></div>
-            <div class="box box3"></div>
-        </div>
+        <div class="container">
+            <div class="card1">
+                <h2>Percentual de acertos por Dialetos</h2>
 
-        <div class="rightTopSide">
-            <h4>Percentuais</h4>
-            <div class="metrics">
-                <p> Abaixo de 60% - Baixo </p>
-                <p> 60% ou Acima - Média </p>
-                <p> Acima de 80% - Alto </p>
+                <div class="elements">
+                    <p><span id="value">0%</span> <br> Inglês Estadunidense</p> <p><span id="value">0%</span> <br> Inglês Britânico</p>
+                </div>
+            </div>
+            <div class="card2">
+                <h2>Dialetos mais escolhidos</h2>
+
+                <div class="dialects">
+                    <p><span id="value">0%</span> <br> Inglês Estadunidense</p> <p><span id="value">0%</span> <br> Inglês Britânico</p>
+                </div>
+            </div>
+            <div class="card3">
+                <div class="title">
+                    <h2>Percentuais</h2>
+                </div>
+                <div class="values">
+                    <div class="firstValue">
+                        <p> Menor que 60%</p>
+                        <p><span class="red">Baixo</span></p>
+                    </div>
+                    <div class="secondValue">
+                        <p> Maior ou igual a 60%</p>
+                        <p><span class="yellow">Médio</span></p>
+                    </div>
+                    <div class="thirdValue">
+                        <p>Maior que 80%</p>
+                        <p><span class="green">Alto</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card4">
+                <h3>Dialeto mais difícil: Inglês Britânico</p>
+            </div>
+            <div class="chart1">
+                <canvas id="myChart1"></canvas>
+            </div>
+            <div class="chart2">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
-
-        <div class="chart1">
-
-        </div>
-        <div class="chart2">
-
-        </div>
     </main>
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
+
+<script>
+
+    welcome.innerHTML = `Olá, ${sessionStorage.USERNAME}!`;
+
+  const ctx1 = document.getElementById('myChart1');
+
+  new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue'],
+      datasets: [{
+        label: 'Acertos por Dialeto',
+        data: [12, 19],
+        backgroundColor: ['#4169E1', '#E63946'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+          color: 'rgba(200,200,200,1)', 
+          borderColor: '#ffffff',          
+          borderWidth: 2,                  
+          lineWidth: 1,                    
+          drawTicks: true
+        }
+        }
+      }
+    }
+  });
+
+  const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Britânico', 'Estadunidense'],
+    datasets: [{
+      label: 'Dialeto mais Escolhido',
+      data: [89, 55],
+      backgroundColor: ['#4169E1', '#E63946'],
+      borderWidth: 1,
+      barThickness: 60,
+    }]
+  },
+  options: {
+    indexAxis: 'y',  
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: { 
+            ticks: {
+            color: '#FFFFFF', // cor dos números no eixo x
+            font: { size: 14 }
+        },     
+        beginAtZero: true,
+        max: 100,
+      }
+    },
+  }});
+</script>

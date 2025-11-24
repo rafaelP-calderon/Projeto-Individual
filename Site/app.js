@@ -18,18 +18,16 @@ var app = express();
 var indexRouter = require("./public/src/routes/index.js");
 var usuarioRouter = require("./public/src/routes/usuarios.js");
 var questionarioRouter = require("./public/src/routes/questionario.js");
-var objectsRouter = require("./public/src/routes/objects.js")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
-
+    
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/questionario", questionarioRouter);
-app.use("/objects", objectsRouter);
+app.use("/questionario", questionarioRouter);   
 
 app.listen(PORTA_APP, function () {
     console.log(`

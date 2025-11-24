@@ -1,6 +1,6 @@
 var questionarioModel = require("../models/questionarioModel");
 
-function cadastrar(req, res) {
+function cadastrarQuestionario(req, res) {
     var idade = req.body.idade;
     var dialeto = req.body.dialeto;
     var familiaridade = req.body.familiaridade;
@@ -22,5 +22,5 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-    cadastrar
+    cadastrarQuestionario
 };

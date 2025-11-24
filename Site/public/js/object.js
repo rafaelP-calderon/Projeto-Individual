@@ -29,6 +29,7 @@ var objectsUK = [
     correctUK.style.display = 'none';
     correctUSA.style.display = 'none';
     displayNow.style.display = 'flex';
+    showTitle.style.display = 'flex';
 
     function sendAnswer() {
         displayNow.style.display = 'none';
@@ -46,110 +47,88 @@ var objectsUK = [
     }
 
     function responderUSA() {
-        var respostas = answerUSA.value.toLowerCase().trim();
-        var acertou = false;
+    var respostas = answerUSA.value.toLowerCase().trim();
+    var acertou = false;
 
-            for (var i = 0; i < objectsUSA.length; i++) {
-                if(i == 0 && respostas == objectsUSA[i].ans) {
-                    imgUSA.src = '';
-                    imgUSA.src = `${objectsUSA[i + 1].img}`;
-                    acertos++;            
-                    correctUSA.style.display = 'none';
-                    acertou = true;
-                } else if(i == 1 && respostas == objectsUSA[i].ans) {
-                    imgUSA.src = '';
-                    imgUSA.src = `${objectsUSA[i + 1].img}`;
-                    acertos++;
-                    correctUSA.style.display = 'none';
-                    acertou = true;
-                } else if(i == 2 && respostas == objectsUSA[i].ans) {
-                    imgUSA.src = '';
-                    imgUSA.src = `${objectsUSA[i + 1].img}`;
-                    acertos++;
-                    correctUSA.style.display = 'none';
-                    acertou = true;
-                } else if(i == 3 && respostas == objectsUSA[i].ans) {
-                    imgUSA.src = '';
-                    titleGame.style.display = 'none';
-                    acertos++;
-                    correctUSA.style.display = 'none';
-                    displayNow.style.display = 'none';
-                    displayLaterUSA.style.display = 'none';
-                    results.innerHTML = `<h1>Resultados</h1>
-                                        <p>Acertos: ${acertos}</p>
-                                        <p>Erros: ${erros}</p>
-                                        <div class="goBack">
-                                            <a href="minigames.html"> 
-                                                <i class="fa-solid fa-arrow-left"></i> 
-                                                <p>Voltar</p> 
-                                            </a>
-                                        </div>`;
-                    results.style.display = 'flex';
-                    acertou = true;
-                } 
-            }
+    for (var i = 0; i < objectsUSA.length; i++) {
+        if (respostas === objectsUSA[i].ans) {
+            acertos++;
+            answerUSA.style.border = '1px solid #000000';
+            correctUSA.style.display = 'none';
+            acertou = true;
 
-            if(!acertou) {
-                erros++;
-                alert("Erro");
+            answerUSA.value = '';
+
+            if (i + 1 < objectsUSA.length) {
+                imgUSA.src = objectsUSA[i + 1].img;
+            } else {
+                finalizarJogo();
             }
         }
+    }
+
+    if (!acertou) {
+        erros++;
+        answerUSA.style.border = '2px solid #ff0000';
+        answerUSA.value = '';
+    }
+}
+
+    function finalizarJogo() {
+
+    var total = acertos + erros;
+    var pontuacao = total > 0 ? Math.round((acertos / total) * 100) : 0;
+
+    displayLaterUSA.style.display = 'none';
+    showTitle.style.display = 'none';
+
+    results.innerHTML = `
+        <h1>Resultados</h1>
+        <p>Acertos: ${acertos}</p>
+        <p>Erros: ${erros}</p>
+        <p>Pontuação: ${pontuacao}%</p>
+        <button onclick="jogar()" style="margin-top: 1vw; width: 10vw">Jogar Novamente</button>
+    `;
+    results.style.display = 'flex';
+}
 
     function responderUK() {
-        var respostas = answerUK.value.toLowerCase().trim();
-        var acertou = false;
+    var respostas = answerUK.value.toLowerCase().trim();
+    var acertou = false;
 
-            for (var i = 0; i < objectsUK.length; i++) {
-                if(i == 0 && respostas == objectsUK[i].ans) {
-                    imgUK.src = '';
-                    imgUK.src = `${objectsUK[i + 1].img}`;
-                    acertos++;            
-                    correctUK.style.display = 'none';
-                    acertou = true;
-                } else if(i == 1 && respostas == objectsUK[i].ans) {
-                    imgUK.src = '';
-                    imgUK.src = `${objectsUK[i + 1].img}`;
-                    acertos++;
-                    correctUK.style.display = 'none';
-                    acertou = true;
-                } else if(i == 2 && respostas == objectsUK[i].ans) {
-                    imgUK.src = '';
-                    imgUK.src = `${objectsUK[i + 1].img}`;
-                    acertos++;
-                    correctUK.style.display = 'none';
-                    acertou = true;
-                } else if(i == 3 && respostas == objectsUK[i].ans) {
-                    imgUK.src = '';
-                    titleGame.style.display = 'none';
-                    acertos++;
-                    correctUK.style.display = 'none';
-                    displayNow.style.display = 'none';
-                    displayLaterUK.style.display = 'none';
-                    results.innerHTML = `<h1>Resultados</h1>
-                                        <p>Acertos: ${acertos}</p>
-                                        <p>Erros: ${erros}</p>
-                                        <div class="goBack">
-                    <a href="minigames.html"> <i class="fa-solid fa-arrow-left"></i> <p>Voltar</p> </a>
-                </div>  `;
-                    results.style.display = 'flex';
-                    acertou = true;
-                    var pont = acertos;
-                    console.log(pont);
-                } }
-                fetch("/questionario/cadastrar", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    palavra
-                })
-                })
-                .then(resposta => {
-                    if(resposta.ok) {
-                        window.location = 'learn.html';
-                    } else {
-                        alert(Error);
-                    }
-                }
-            )  .catch(err => console.error(err));
-                    }
+    for (var i = 0; i < objectsUK.length; i++) {
+        if (respostas === objectsUK[i].ans) {
+            acertos++;
+            answerUK.style.border = '1px solid #000000';
+            correctUK.style.display = 'none';
+            acertou = true;
+
+            answerUK.value = '';
+
+            if (i + 1 < objectsUK.length) {
+                imgUK.src = objectsUK[i + 1].img;
+            } else {
+                finalizarJogo();
+            }
+        }
+    }
+
+    if (!acertou) {
+        erros++;
+        answerUK.style.border = '2px solid #ff0000';
+        answerUK.value = '';
+    }
+}
+
+        function jogar() { 
+            displayLaterUK.style.display = 'none'; 
+            displayLaterUSA.style.display = 'none'; 
+            dialect.style.display = 'none'; 
+            results.style.display = 'none'; 
+            correctUK.style.display = 'none'; 
+            correctUSA.style.display = 'none'; 
+            displayNow.style.display = 'flex'; 
+            showTitle.style.display = 'flex'; 
+            location.reload('object.html'); 
+        }
                 
