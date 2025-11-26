@@ -38,7 +38,7 @@ function kpiErrosUK () {
             .then(function(response) {
                 if(response.ok) {
                     response.json().then(function(resposta) {
-                        console.log(resposta);
+                        console.log(resposta[0]);
                         
                         valueUKError.innerHTML = `${resposta[resposta.length - 1].totalErrosUk} erros`;
                     }) 
@@ -52,7 +52,7 @@ function kpiErrosUS () {
             .then(function(response) {
                 if(response.ok) {
                     response.json().then(function(resposta) {
-                        console.log(resposta);
+                        console.log(resposta[0]);
                         
                         valueUSError.innerHTML = `${resposta[resposta.length - 1].totalErrosUS} erros`;
                     }) 
@@ -68,7 +68,7 @@ function graficoTaxaAcerto() {
     var taxaUK = 0;
     var dialeto = '';
 
-    fetch(`/kpiTaxaAcertoUS/kpiTaxaAcertoUS/${email}`)
+    fetch(`/kpiTaxaAcertoUS/${email}`)
         .then(res => res.json())
         .then(dataUS => {
             taxaUS = dataUS[dataUS.length - 1].PontuacaoUS;

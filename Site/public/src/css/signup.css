@@ -3,7 +3,7 @@ main {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(90deg, #00247D 50%, #CF142B 50%);
+    background: linear-gradient(90deg, #02174b 50%, #fb818f 50%);
 }
 
 .container {
@@ -279,27 +279,6 @@ main {
     pointer-events: none;
     transition: all 0.2s ease;
     padding: 0 0.25rem;
-}
-
-.field input:focus + label,
-.field input:not(:placeholder-shown) + label {
-    top: 0;
-    font-size: 0.8rem;
-}
-
-.field i {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffff;
-    font-size: 1vw;
-}
-
-input:-webkit-autofill {
-    -webkit-box-shadow: #ffffff inset;
-    -webkit-text-fill-color: #000; 
-    transition: background-color 5000s ease-in-out 0s;
 }
 
 .erroUser, .erroEmail, .erroPasswd {

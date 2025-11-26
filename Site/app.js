@@ -21,8 +21,8 @@ var questionarioRouter = require("./public/src/routes/questionario.js");
 var kpiTaxaAcertoUKRouter = require("./public/src/routes/kpiTaxaAcertoUK");
 var kpiTaxaAcertoUSRouter = require("./public/src/routes/kpiTaxaAcertoUS");
 var pontuacaoRouter = require("./public/src/routes/pontucao.js");
-var kpiErrosUK = require("./public/src/routes/kpiErrosUK.js");
-var kpiErrosUS = require("./public/src/routes/kpiErrosUS.js");
+var kpiErrosUKRouter = require("./public/src/routes/kpiErrosUK.js");
+var kpiErrosUSRouter = require("./public/src/routes/kpiErrosUS.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -36,8 +36,8 @@ app.use("/questionario", questionarioRouter);
 app.use("/kpiTaxaAcertoUK", kpiTaxaAcertoUKRouter);
 app.use("/kpiTaxaAcertoUS", kpiTaxaAcertoUSRouter);   
 app.use("/pontuacao", pontuacaoRouter); 
-app.use("/kpiErrosUK", kpiErrosUK); 
-app.use("/kpiErrosUS", kpiErrosUS); 
+app.use("/kpiErrosUK", kpiErrosUKRouter); 
+app.use("/kpiErrosUS", kpiErrosUSRouter); 
 
 app.listen(PORTA_APP, function () {
     console.log(`

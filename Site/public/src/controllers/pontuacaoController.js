@@ -9,7 +9,7 @@ function cadastrarObject(req, res) {
     var fkUsuario = req.body.fkUsuario;
 
     // Faça as validações dos valores
-    if (pontuacao == undefined || acertosUK == undefined || erros == undefined || fkUsuario == null) {
+    if (pontuacao == undefined || acertosUK == undefined || erros == undefined || pontuacao == undefined || fkUsuario == null) {
         return res.status(400).send("Dados ausentes.");
     } else {
 

@@ -103,7 +103,7 @@ var objectsUK = [
     `;
     results.style.display = 'flex';
 
-    var fkUsuario = localStorage.getItem("idUsuario");
+    var fkUsuario = sessionStorage.getItem("idUsuario");
 
     fetch("/pontuacao/pontuacao", {
         method: "POST",

@@ -3,7 +3,7 @@ var database = require("../database/config")
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
 function cadastrar(nome, email, senha) {    
     var instrucaoSql = `
-        INSERT INTO Usuario (nome, email, senha, dtCadastro)
+        insert into Usuario (nome, email, senha, dtCadastro)
         VALUES ('${nome}', '${email}', '${senha}', NOW())
     `;
 

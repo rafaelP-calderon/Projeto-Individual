@@ -4,7 +4,7 @@ var database = require("../database/config")
 function kpiErrosUS(email) {    
     var instrucaoSql = `
         select totalErrosUS from vwErrosUS
-        where idUsuario = (select idUsuario from Usuario where email = '${email}');    
+            where idUsuario = (select idUsuario from Usuario where email = '${email}');    
     `;
 
     return database.executar(instrucaoSql);

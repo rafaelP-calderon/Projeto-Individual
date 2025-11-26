@@ -33,3 +33,24 @@ hr{
 #red, #blue, #green{
     font-weight: 900;
 }
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 0.8rem;
+}
+
+.field i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1vw;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: #ffffff inset;
+    -webkit-text-fill-color: #000; 
+    transition: background-color 5000s ease-in-out 0s;
+}

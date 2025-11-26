@@ -18,45 +18,63 @@ create table Questionario (
 
 create table Sessao (
 	idSessao int primary key auto_increment,
-    acertosDialetos int,
-    errosDialetos int,
-    mediaAcertos int,
+    acertosUK int,
+    acertosUSA int,
     pontuacao int,
     fkUsuario int,
-    constraint fkUsuarioSessao foreign key (fkUsuario) references Usuario(idUsuario)
+    constraint fkUsuarioSessao foreign key(fkUsuario) references 
+    Usuario(idUsuario)
 );
 
-create table Object (
-	idObject int primary key auto_increment,
-    palavra varchar(100)
-);
+select * from usuario;
+select * from questionario;
+select * from sessao;
+    
+create or replace view vwTaxaAcertoUK as 
+select 
+    u.nome, 
+    s.fkUsuario as idUsuario, 
+    case when s.acertosUK > 0 then s.pontuacao
+        else null
+    end as PontuacaoUK
+from sessao as s 
+join usuario as u on s.fkUsuario = u.idUsuario 
+where s.acertosUK > 0;
+    
+create or replace view vwTaxaAcertoUS as 
+select 
+    u.nome, 
+    s.fkUsuario as idUsuario, 
+    case when s.acertosUSA > 0 then s.pontuacao
+        else null
+    end as PontuacaoUS
+from sessao as s 
+join usuario as u on s.fkUsuario = u.idUsuario
+where s.acertosUSA > 0;
 
-create table Idioms (
-	idIdioms int primary key auto_increment,
-    expressao varchar(100),
-    significado varchar(100)
-);
+create or replace view vwErrosUK as
+select s.fkUsuario as idUsuario, sum(erros) as totalErrosUK
+	from Sessao s join Usuario u
+    on s.fkUsuario = u.idUsuario
+	where acertosUK > 0
+group by fkUsuario;
 
-create table sessaoObjeto (
-	fkSessao int,
-		constraint fkSessaoObjeto 
-			foreign key (fkSessao) 
-				references Sessao(idSessao),
-    fkObject int,
-		constraint fkObjectObjeto 
-			foreign key (fkObject) 
-				references Object(idObject),
-    pontuacao int
-);
+create or replace view vwErrosUS as
+select s.fkUsuario as idUsuario, sum(erros) as totalErrosUS
+	from Sessao s join Usuario u
+    on s.fkUsuario = u.idUsuario
+	where acertosUSA > 0
+group by fkUsuario;
 
-create table sessaoIdioms (
-	fkSessao int,
-		constraint fkSessaoIdioms 
-			foreign key (fkSessao) 
-				references Sessao(idSessao),
-    fkIdioms int,
-		constraint fkIdiomsIdioms 
-			foreign key (fkIdioms) 
-				references Idioms(idIdioms),
-    pontuacao int
-);
+                
+select PontuacaoUK from vwTaxaAcertoUK
+where idUsuario = (select idUsuario from Usuario where email = 'rafacalderon2307@gmail.com');
+
+select PontuacaoUS from vwTaxaAcertoUS
+where idUsuario = (select idUsuario from Usuario where email = 'rafacalderon2307@gmail.com');   
+
+select totalErrosUk from vwErrosUK
+where idUsuario = (select idUsuario from Usuario where email = 'rafacalderon2307@gmail.com');
+
+select totalErrosUS from vwErrosUS
+where idUsuario = (select idUsuario from Usuario where email = 'rafacalderon2307@gmail.com');
