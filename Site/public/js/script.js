@@ -66,7 +66,7 @@
     })
     .then(resultado => {
         sessionStorage.EMAIL_USUARIO = validateEmail;
-        localStorage.setItem("idUsuario", resultado.usuario.idUsuario);
+        sessionStorage.setItem("idUsuario", resultado.usuario.idUsuario);
 
         msgLogin.style.display = 'flex';
         msgLogin.style.color = '#00ff00';
@@ -88,7 +88,6 @@
         var validatePasswd = passwdUser.value;
 
         sessionStorage.USERNAME = validateUser;
-        console.log(sessionStorage.USERNAME);
 
         fetch("/usuarios/cadastrar", {
             method: "POST",

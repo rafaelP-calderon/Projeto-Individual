@@ -17,9 +17,11 @@ var objectsUK = [
     imgUK.src = `${objectsUK[0].img}`;
     imgUSA.src = `${objectsUSA[0].img}`;
 
-    var palavra = objectsUK[0].ans;
-
     var acertos = 0;
+    var contadorUK = 0;
+    var contadorUS = 0;
+    var acertosUK = 0;
+    var acertosUS = 0;
     var erros = 0;
 
     displayLaterUK.style.display = 'none';
@@ -39,11 +41,15 @@ var objectsUK = [
     function usa() {
         dialect.style.display = 'none';
         displayLaterUSA.style.display = 'flex';
+        contadorUS++;
     }
 
     function uk() {
         dialect.style.display = 'none';
         displayLaterUK.style.display = 'flex';
+        contadorUK++;
+        localStorage.setItem('contadorUK', contadorUK);
+        console.log(contadorUK);
     }
 
     function responderUSA() {
@@ -53,9 +59,12 @@ var objectsUK = [
     for (var i = 0; i < objectsUSA.length; i++) {
         if (respostas === objectsUSA[i].ans) {
             acertos++;
+            acertosUS++;
             answerUSA.style.border = '1px solid #000000';
             correctUSA.style.display = 'none';
             acertou = true;
+
+            console.log(acertosUS);
 
             answerUSA.value = '';
 
@@ -66,30 +75,52 @@ var objectsUK = [
             }
         }
     }
-
     if (!acertou) {
         erros++;
         answerUSA.style.border = '2px solid #ff0000';
         answerUSA.value = '';
-    }
+    }    
 }
 
     function finalizarJogo() {
 
     var total = acertos + erros;
     var pontuacao = total > 0 ? Math.round((acertos / total) * 100) : 0;
+    console.log(contadorUK);
 
     displayLaterUSA.style.display = 'none';
     showTitle.style.display = 'none';
+    displayLaterUK.style.display = 'none';
 
     results.innerHTML = `
         <h1>Resultados</h1>
         <p>Acertos: ${acertos}</p>
         <p>Erros: ${erros}</p>
-        <p>Pontuação: ${pontuacao}%</p>
-        <button onclick="jogar()" style="margin-top: 1vw; width: 10vw">Jogar Novamente</button>
+        <div class="buttons">
+            <button onclick="jogar()" style="width: 10vw">Jogar Novamente</button>
+            <button onclick="redirecionar() style="width: 10vw"><a href="dashboard.html">Ver estatísticas</a></button>
+        </div>
     `;
     results.style.display = 'flex';
+
+    var fkUsuario = localStorage.getItem("idUsuario");
+
+    fetch("/pontuacao/pontuacao", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            acertosUK,
+            acertosUS,
+            erros,
+            pontuacao,
+            fkUsuario
+        })
+    })
+    .then(res => {
+        if (res.ok) console.log("Pontuação salva com sucesso");
+        else console.error("Erro ao salvar pontuação");
+    })
+    .catch(err => console.error(err));
 }
 
     function responderUK() {
@@ -99,6 +130,7 @@ var objectsUK = [
     for (var i = 0; i < objectsUK.length; i++) {
         if (respostas === objectsUK[i].ans) {
             acertos++;
+            acertosUK++;
             answerUK.style.border = '1px solid #000000';
             correctUK.style.display = 'none';
             acertou = true;

@@ -1,6 +1,5 @@
 main {
     display: flex;
-    background-color: rgb(255, 255, 255);
 }
 
 aside {
@@ -190,5 +189,14 @@ aside button:hover {
 
 .firstValue, .secondValue, .thirdValue {
     text-align: center;
+}
+
+#valueUK, #valueUS, #valueUKError, #valueUSError {
+    font-size: 1.7vw;
+}
+
+#dialectChosen {
+    font-weight: 700;
+    color: #FF4C4C;
 }
 

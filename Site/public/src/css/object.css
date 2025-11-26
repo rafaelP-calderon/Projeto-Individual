@@ -111,3 +111,9 @@ main {
 #dialect button {
     width: 5vw;
 }
+
+.buttons {
+    display: flex;
+    margin-top: 1vw;
+    gap: 1vw;
+}

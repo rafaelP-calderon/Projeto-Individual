@@ -1,15 +1,15 @@
 var database = require("../database/config")
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-function kpiTaxaAcertoUS(email) {    
+function kpiErrosUK(email) {    
     var instrucaoSql = `
-        select PontuacaoUS from vwTaxaAcertoUS
-            where idUsuario = (select idUsuario from Usuario where email = '${email}');    
+        select totalErrosUk from vwErrosUK
+        where idUsuario = (select idUsuario from Usuario where email = '${email}');    
     `;
 
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    kpiTaxaAcertoUS
+    kpiErrosUK
 };

@@ -92,3 +92,7 @@ body {
     box-shadow: 0 0 1vw #ffffff;
     border: none;
 }
+
+#logo img {
+    width: 30%;
+}
